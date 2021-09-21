@@ -1,0 +1,117 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 86 期 - 雨下整夜，Bug 溢出就像雨水 | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 86 期 - 雨下整夜，Bug 溢出就像雨水"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2021/06/22/86-raining-all-night-my-buf-overflow-like-rainwater/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 86 期 - 雨下整夜，Bug 溢出就像雨水"><meta name="twitter:description" content="第 86 期 - 雨下整夜，Bug 溢出就像雨水"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/086cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 86 期 - 雨下整夜，Bug 溢出就像雨水"><meta property="og:url" content="https://weekly.starbugs.dev/2021/06/22/86-raining-all-night-my-buf-overflow-like-rainwater/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 86 期 - 雨下整夜，Bug 溢出就像雨水"><meta property="og:image" content="https://weekly.starbugs.dev/img/086cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 87 期 - 我要成為海碼王！" href="https://weekly.starbugs.dev/2021/06/29/87-one-piece-coder/"><link rel="next" title="第 85 期 - 南粽北粽，都沒有我的肉重！" href="https://weekly.starbugs.dev/2021/06/15/85-got-fatter-this-weekend/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 86 期 - 雨下整夜，Bug 溢出就像雨水</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2021-06-22</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="用簡單的-CSS-和-JavaScript-輕鬆製造視差滾動（Parallax-Scrolling）"><a href="#用簡單的-CSS-和-JavaScript-輕鬆製造視差滾動（Parallax-Scrolling）" class="headerlink" title="用簡單的 CSS 和 JavaScript 輕鬆製造視差滾動（Parallax Scrolling）"></a><a href="https://medium.com/starbugs/%E7%94%A8%E7%B0%A1%E5%96%AE%E7%9A%84-css-%E5%92%8C-javascript-%E8%BC%95%E9%AC%86%E8%A3%BD%E9%80%A0%E8%A6%96%E5%B7%AE%E6%BB%BE%E5%8B%95-parallax-scrolling-4e22af7c1c0" target="_blank" rel="noopener">用簡單的 CSS 和 JavaScript 輕鬆製造視差滾動（Parallax Scrolling）</a></h3><p>前一陣子在練習切版的時候，突然發現視差滾動在 Landing Page 上的出現率還滿高的，於是就想練習切一些關於視差滾動的頁面，本來是要直接用 ScrollMagic 的，但想說機會難得，就來了解一下它的原理，殊不知實作起來還滿容易的，一起看看怎麼處理的吧！</p>
+<h2 id="星巴哥專欄作者，原創文章"><a href="#星巴哥專欄作者，原創文章" class="headerlink" title="星巴哥專欄作者，原創文章"></a>星巴哥專欄作者，原創文章</h2><h3 id="lodash-如何正確的-import-lodash"><a href="#lodash-如何正確的-import-lodash" class="headerlink" title="lodash | 如何正確的 import lodash"></a><a href="https://medium.com/starbugs/the-correct-way-to-import-lodash-libraries-bdf613235927" target="_blank" rel="noopener">lodash | 如何正確的 import lodash</a></h3><p>通常前端都會導入一些好用的第三方套件，但是有時候導入的套件並非是基於 es module 進行開發，webpack 沒辦法發揮 tree shaking 的功能，在 import 時一不注意就會載入一堆沒有必要的 function。在這篇文章中以 lodash 作為舉例，目前 lodash 本身並不是使用 es module。所以如果在意 bundle size 的大小，就要特別注意在 import lodash 的方式。</p>
+<h2 id="前端開發"><a href="#前端開發" class="headerlink" title="前端開發"></a>前端開發</h2><h3 id="5-Awesome-CSS-tricks-every-developer-should-know"><a href="#5-Awesome-CSS-tricks-every-developer-should-know" class="headerlink" title="5 Awesome CSS tricks every developer should know"></a><a href="https://dev.to/sumeet16/5-awesome-css-tricks-every-developer-should-know-2n5k" target="_blank" rel="noopener">5 Awesome CSS tricks every developer should know</a></h3><p>文章中介紹一些關於使用 CSS 的技巧，包含了可以讓使用者體驗更好的 Smooth scrolling，以及該如何設置圖片的大小、將自己喜愛的圖片或 icon 設置成鼠標、用 flex 更好的做水平和垂直置中，還有更容易控制內容行數的 <code>-webkit-line-clamp</code>，以上語法將來可能都可以成為你的排版小幫手！</p>
+<h3 id="Be-the-boss-of-your-CSS-styles-with-Tailwind-CSS"><a href="#Be-the-boss-of-your-CSS-styles-with-Tailwind-CSS" class="headerlink" title="Be the boss of your CSS styles with Tailwind CSS"></a><a href="https://victoriaadedayo.hashnode.dev/be-the-boss-of-your-css-styles-with-tailwind-css-ckpxniz4o08il92s1huob0phr" target="_blank" rel="noopener">Be the boss of your CSS styles with Tailwind CSS</a></h3><p>Tailwind 是一個主張實用至上的 CSS 框架，它提供了很多實用且風格一致的介面，甚至是讓你不需要寫任何自己的 CSS，而且你也不用害怕被 Tailwind 綁死，因為如果你想做些修改，仍然可以做擴充、調整和改變！一起跟著文章作者入門 Tailwind 吧！</p>
+<h3 id="React-18：新的-SSR-架構解決了什麼問題？"><a href="#React-18：新的-SSR-架構解決了什麼問題？" class="headerlink" title="React 18：新的 SSR 架構解決了什麼問題？"></a><a href="https://jigsawye.com/2021/06/10/react-18-new-ssr-architecture?fbclid=IwAR3bQq_W6HNFcNh9X0WOfAy9x544aJagDo4t7YyDX5nyqp0NcCbMtIndno4" target="_blank" rel="noopener">React 18：新的 SSR 架構解決了什麼問題？</a></h3><p>拜技術的進步所賜，SSR 可以說是越來越普及了，早期在 React 中想要使用 SSR 可以利用 <a href="https://nextjs.org/docs/getting-started" target="_blank" rel="noopener">Next.js</a> 這個套件，但 SSR 有一個非常嚴重的缺陷就是會讓整體的網頁在渲染的過程中一定會比 CSR 來的慢，因為 server 端會先抓取該內容所需的資料並且繪製出來，但最新的 React 18 帶來了新的 SSR 架構，讓未來 SSR 的渲染速度不會再繼續慢下去了。</p>
+<h3 id="Develop-amp-test-React-components-in-isolation"><a href="#Develop-amp-test-React-components-in-isolation" class="headerlink" title="Develop &amp; test React components in isolation"></a><a href="https://dev.to/dhaiwat10/develop-test-react-components-in-isolation-3714" target="_blank" rel="noopener">Develop &amp; test React components in isolation</a></h3><p>之前在推薦 React component testing 的時候都會推薦 React testing library，沒想到也可以利用 storybook 進行 testing，而且這樣還能順便看到該元件的表現行為也算是蠻一舉兩得的，這篇文章介紹了如何利用 storybook 進行 testing 有興趣的讀者不妨可以收藏起來看~</p>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><h3 id="從-V8-bytecode-探討-let-與-var-的效能問題"><a href="#從-V8-bytecode-探討-let-與-var-的效能問題" class="headerlink" title="從 V8 bytecode 探討 let 與 var 的效能問題"></a><a href="https://blog.huli.tw/2020/02/20/let-vs-var-bytecode/" target="_blank" rel="noopener">從 V8 bytecode 探討 let 與 var 的效能問題</a></h3><p>忘了之前有沒有分享過這篇，但我真心覺得這個研究還有趣的，如果對 let 跟 var 在 V8 引擎中的行為有興趣，而且也不排斥看一些 V8 bytecode，那真的一定要讀讀這篇</p>
+<h3 id="What’s-New-in-RxJS-7"><a href="#What’s-New-in-RxJS-7" class="headerlink" title="What’s New in RxJS 7"></a><a href="https://link.medium.com/kmHrZy0Fggb" target="_blank" rel="noopener">What’s New in RxJS 7</a></h3><p>作為 reactive programming 在 JS 裡面的代表性函式庫，RxJS 已經要發佈第七個版本了，這個版本除了檔案更小、速度更快、更節省記憶體之外，用法上也有做出一些調整，如果最近有打算把 RxJS 從 6 升到 7 的話可以參考看看這篇～</p>
+<h3 id="A-Comprehensive-Guide-To-JavaScript-Design-Patterns"><a href="#A-Comprehensive-Guide-To-JavaScript-Design-Patterns" class="headerlink" title="A Comprehensive Guide To JavaScript Design Patterns"></a><a href="https://www.lambdatest.com/blog/comprehensive-guide-to-javascript-design-patterns/" target="_blank" rel="noopener">A Comprehensive Guide To JavaScript Design Patterns</a></h3><p>如果你最近想學設計模式，而且你又剛好會寫 JS，那就來看看這篇吧～這篇文章雖然很長，但他從設計模式的分類開始講起，給你一個整體的概念，接著才下去細講每個模式，而且在講解時除了提供範例之外還有附圖，全部看完（雖然可能要很久XD）一定會有很多收穫</p>
+<h3 id="JavaScript-What-is-short-circuit-evaluation"><a href="#JavaScript-What-is-short-circuit-evaluation" class="headerlink" title="JavaScript: What is short-circuit evaluation?"></a><a href="https://codeburst.io/javascript-what-is-short-circuit-evaluation-ff22b2f5608c" target="_blank" rel="noopener">JavaScript: What is short-circuit evaluation?</a></h3><p>說真的 JavaScript 總是有很多奇怪的寫法來達到想要的結果，由於以前寫 C++ 寫久了，所以一開始在寫 JS 看到都會覺得 <code>&amp;&amp;</code>、<code>||</code> 這個運算子就會直覺的認為只會返回不林子，殊不知 JS 的這兩個運算子能做的事情非常多而且非常奇妙，以後有想要進行邏輯取值的時候不妨都可以利用這種方式來寫，可以讓你的程式碼瞬間少了好幾行看起來很乾淨XD</p>
+<h3 id="这些-JS-的新语法有点东西啊"><a href="#这些-JS-的新语法有点东西啊" class="headerlink" title="这些 JS 的新语法有点东西啊"></a><a href="https://juejin.cn/post/6976070529388118030" target="_blank" rel="noopener">这些 JS 的新语法有点东西啊</a></h3><p>作者整理了一些在 tc39 上的有趣提案，其中包含了現在滿常被討論的 <code>.at</code> 外，還有已經在第四階段的 Top-level <code>await</code>，之後使用 <code>await</code> 時甚至不需要放到 <code>async</code> 裡面，但其中最讓我感到噁心的還是 「管道运算符（The Pipeline Operator）」，還有其他有趣又實用的提案，大家一起看看吧！</p>
+<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><h3 id="CURL-BYE-BYE-TRAVIS-CI"><a href="#CURL-BYE-BYE-TRAVIS-CI" class="headerlink" title="CURL: BYE BYE TRAVIS CI"></a><a href="https://daniel.haxx.se/blog/2021/06/14/bye-bye-travis-ci/" target="_blank" rel="noopener">CURL: BYE BYE TRAVIS CI</a></h3><p>CURL 這個 Project 從 2013/10/17 在 Merge 某一個 Config 檔案時開始使用 Travis CI，正式取代了由自願者幫忙架設的 Autobuild 系統，以免費服務來說 Travis CI 真的提供了一個很棒的服務，過了四年到 2017 時，CURL 依然使用 Travis，這時候每一個 Commit 差不多有 10 個 Job 需要運行，到 2019 時變成 30 個左右，他依然表現良好，而且 Travis 官方甚至協助讓 CURL 可以比其他開源軟體運行更多平行化的 Job</p>
+<p>不過到了 2021 時，每一個 Commit 最多可以跑到 100 個 Job，這次遇到了 travis-ci.org 搬家到 travis-ci.com 的事情，CURL 的作者不諱言不知道官方為什麼要這樣做之外，這次多的規則中，規定了開源專案不能接受商業公司或是組織的贊助，所以決定了 CURL 無法繼續使用 Travis CI，而且也開始沒有再收到來自 Travis 官方的免費 Credit</p>
+<p>這時候來自 Zuul CI 和 Circle CI 開始協助幫忙把本來運行在 Travis CI 的 Job 搬家到他們的平台上，總算在 2021/06/14 將所有的 Job 從 Travis CI 搬走，有人說為什麼不乾脆付錢就好了，但 CURL 作者覺得 Travis CI 不再視 CURL 為開源專案這件事情讓他無法接受，而且現在市面上還有免費的就先擋著用，等到未來逼不得以需要付錢時再說了！</p>
+<h3 id="Design-Patterns-Top-5-Techniques-for-Implementing-Fault-Tolerance-in-Distributed-Systems"><a href="#Design-Patterns-Top-5-Techniques-for-Implementing-Fault-Tolerance-in-Distributed-Systems" class="headerlink" title="Design Patterns: Top 5 Techniques for Implementing Fault Tolerance in Distributed Systems"></a><a href="https://levelup.gitconnected.com/design-patterns-top-5-techniques-for-implementing-fault-tolerance-in-distributed-systems-81bef4408c3b" target="_blank" rel="noopener">Design Patterns: Top 5 Techniques for Implementing Fault Tolerance in Distributed Systems</a></h3><p>過去四十年來許多在系統設計中監控和容錯的技術不斷地被開發，使用和改進，所以作者想要透過此篇文章介紹在分散系統中，讓自己的應用服務跟其他服務進行溝通時，需要使用到哪些技術，才仍夠讓自己的應用服務具備容錯性和監控能力</p>
+<p>首先從什麼是分散式系統開始介紹起，接著細談容錯性是什麼，以及為什麼需要它，然後進入重點談到各種解決 Pattern 是想要解決什麼樣的問題，跟如何去實作，而且都畫了精美的架構圖來解釋，是很值得一看的文章，想要了解各種分散式系統容錯性設計 Pattern 的人趕緊打開原文參閱詳細內容吧！</p>
+<ul>
+<li>Acknowledgement</li>
+<li>Circuit Breaker Pattern</li>
+<li>Roll Forward</li>
+<li>Roll Back</li>
+<li>Active Replication Pattern</li>
+</ul>
+<h3 id="My-Top-12-Web-Tools-To-Make-Developers’-Life-Easier"><a href="#My-Top-12-Web-Tools-To-Make-Developers’-Life-Easier" class="headerlink" title="My Top 12 Web Tools To Make Developers’ Life Easier"></a><a href="https://betterprogramming.pub/my-top-12-web-tools-to-make-developers-life-easier-a8794be85d7f" target="_blank" rel="noopener">My Top 12 Web Tools To Make Developers’ Life Easier</a></h3><p>在這個網路時代，開發人員每天在工作上所面臨的常見問題，幾乎都可以在網路上找到解決問題的線上工具，而在這篇文章中，作者想要介紹 12 個他最愛用，而且可以讓 Developer 生活更簡單的線上工具</p>
+<ol>
+<li><a href="https://regex101.com/" target="_blank" rel="noopener">Regex</a>: 協助開發者驗證正規表示</li>
+<li><a href="https://crontab.cronhub.io/" target="_blank" rel="noopener">Crontab</a>: 驗證 Crontab 的寫法有沒有問題</li>
+<li><a href="https://www.epochconverter.com/" target="_blank" rel="noopener">EpochConverter</a>: 轉換人類時間跟 Unix Timestamp</li>
+<li><a href="https://www.urlencoder.org/" target="_blank" rel="noopener">URL-Encoder</a>: Encode 跟 Decode 會在網址使用到的字串</li>
+<li><a href="https://jwt.io/" target="_blank" rel="noopener">JWT</a>: 讓開發者可以解碼，驗證跟產生 JWT</li>
+<li><a href="https://jsonformatter.curiousconcept.com/" target="_blank" rel="noopener">JSONFormatter and Validator</a>: 驗證 JSON 格式，並且印出漂亮格式的 JSON</li>
+<li><a href="https://text-compare.com/" target="_blank" rel="noopener">Text Compare!</a>: 幫忙比對字串的不同之處</li>
+<li><a href="https://www.flaticon.com/" target="_blank" rel="noopener">flaticon</a>: 提供免費的 ICON 讓 Web, iOS, Android 和 Desktop 應用使用</li>
+<li><a href="https://www.freepik.com/" target="_blank" rel="noopener">freepik</a>: 跟 flation 有點像，可以提供免費的圖片</li>
+<li><a href="https://chir.ag/projects/name-that-color/" target="_blank" rel="noopener">Name That Color</a>: 給予顏色最接近的名稱</li>
+<li><a href="https://cloudconvert.com/" target="_blank" rel="noopener">Cloud Convert</a>: 協助各種影片格式轉檔</li>
+<li><a href="https://appicon.co/" target="_blank" rel="noopener">App Icon</a>: 專門給 Mobile App 工程師拿來產生各種尺寸 ICON 的工具</li>
+</ol>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Writers:</p>
+<ul>
+<li><a href="https://medium.com/@hannahlin" target="_blank" rel="noopener">@HannahLin</a> - 從台灣到矽谷，熱愛前端的工程師女孩。</li>
+<li><a href="https://oldmo860617.medium.com/" target="_blank" rel="noopener">@Kyle老莫</a> - 無法忍受自己一天不進步的熱血社會菜雞。</li>
+<li><a href="https://medium.com/@airwaves" target="_blank" rel="noopener">@Airwaves</a> - Hi~我是 Airwaves，熱愛研究如何造輪子的前端工程師。</li>
+<li><a href="https://medium.com/@jinghua.shih" target="_blank" rel="noopener">@Jenny</a> - 我不寫 CSS。</li>
+</ul>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@w5151381guy" target="_blank" rel="noopener">@Andy</a> - 目標成為用嘴巴工作的工程師，專長為網頁開發以及 K8s。</li>
+</ul>
+<p>Maintainers:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://larry850806.medium.com" target="_blank" rel="noopener">@LarryLu</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術。</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>本週呈現主題方式做了一些改變，希望讓讀者能夠更快速精準的找到自己要的資訊。也加入社群活動這個區塊，每週更新社群活動的資訊。如果有任何建議，歡迎私訊 <a href="https://www.facebook.com/StarBugsWeekly/" target="_blank" rel="noopener">星巴哥技術週刊 FB 粉絲專頁</a> 與我們聯繫。</p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2021/06/29/87-one-piece-coder/"><img class="prev_cover lozad" data-src="/img/087cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 87 期 - 我要成為海碼王！</span></div></a></div><div class="next-post pull-right"><a href="/2021/06/15/85-got-fatter-this-weekend/"><img class="next_cover lozad" data-src="/img/085cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 85 期 - 南粽北粽，都沒有我的肉重！</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊 | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2020/05/26/30-time-is-money/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊"><meta name="twitter:description" content="第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/030cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊"><meta property="og:url" content="https://weekly.starbugs.dev/2020/05/26/30-time-is-money/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊"><meta property="og:image" content="https://weekly.starbugs.dev/img/030cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 31 期 - 梅雨季節沒下雨就是開心啦" href="https://weekly.starbugs.dev/2020/06/02/31-good-weather-make-me-happy/"><link rel="next" title="第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？" href="https://weekly.starbugs.dev/2020/05/19/29-fake-git-commit/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2020-05-26</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="React-用十分鐘對自定義-Hooks-寫個測試"><a href="#React-用十分鐘對自定義-Hooks-寫個測試" class="headerlink" title="React | 用十分鐘對自定義 Hooks 寫個測試"></a><a href="https://medium.com/starbugs/react-%E7%94%A8%E5%8D%81%E5%88%86%E9%90%98%E5%B0%8D%E8%87%AA%E5%AE%9A%E7%BE%A9-hooks-%E5%AF%AB%E5%80%8B%E6%B8%AC%E8%A9%A6-d0b8a6c66c40" target="_blank" rel="noopener">React | 用十分鐘對自定義 Hooks 寫個測試</a></h3><p> Hooks 推出很久很久了（其實也才去年初 😂），也把測試 Hooks 放到學習清單中，但都很懶的沒有去碰，直到今天才把清單中的這項給打勾。相信有很多人已經學習過，也著手開始寫關於 Hooks 的測試，甚至遇到過各種情況或是問題，歡迎和我分享寶貴的經驗 😃。</p>
+<h2 id="神-Q-超人"><a href="#神-Q-超人" class="headerlink" title="神 Q 超人"></a>神 Q 超人</h2><h3 id="A-Practical-Guide-to-TypeScript-How-to-Build-a-Pokedex-App-Using-HTML-CSS-and-TypeScript"><a href="#A-Practical-Guide-to-TypeScript-How-to-Build-a-Pokedex-App-Using-HTML-CSS-and-TypeScript" class="headerlink" title="A Practical Guide to TypeScript - How to Build a Pokedex App Using HTML, CSS, and TypeScript"></a><a href="https://www.freecodecamp.org/news/a-practical-guide-to-typescript-how-to-build-a-pokedex-app-using-html-css-and-typescript/" target="_blank" rel="noopener">A Practical Guide to TypeScript - How to Build a Pokedex App Using HTML, CSS, and TypeScript</a></h3><p>我一直相信想要學習一個新技術或是有動力去完成一個新作品，就是要選擇自己喜歡的事情，以這篇推薦文章為例，你覺得 TypeScript 很難嗎？其實不會啊！就一篇文章就可以搞定了，再加上 Pokemon API，甚至能馬上變成一個小作品。要愛上自己在做的事情太難了，不如直接選擇自己所愛的！</p>
+<h3 id="不知道怎么封装代码？看看这几种设计模式吧！"><a href="#不知道怎么封装代码？看看这几种设计模式吧！" class="headerlink" title="不知道怎么封装代码？看看这几种设计模式吧！"></a><a href="https://juejin.im/post/5ec737b36fb9a04799583002" target="_blank" rel="noopener">不知道怎么封装代码？看看这几种设计模式吧！</a></h3><p>設計模式一直是耳熟能詳的名詞，但又不知道到底該不該學他，或是學了以後會有什麼幫助，事實上我認為設計模式是為了解決程式碼中某些常見的問題而誕生，就像是圍棋中的棋譜，遇到相似的狀況就該怎麼應對下一步，設計模式也是如此，它就是前人的智慧，每種設計模式都是為了讓程式碼變得更容易閱讀或修改。</p>
+<h3 id="14-Developers-to-Follow-on-Twitter"><a href="#14-Developers-to-Follow-on-Twitter" class="headerlink" title="14 Developers to Follow on Twitter"></a><a href="https://dev.to/adriantwarog/14-developers-to-follow-on-twitter-570h" target="_blank" rel="noopener">14 Developers to Follow on Twitter</a></h3><p>前一陣子 Luka 介紹了值得訂閱的 Podcaster，此篇文章也整理了再 Twitter 上可以追蹤的開發者！他們都會在 Twitter 上分享自己學習程式的大小事情，再看的過程中也可以當作練習英文，真是一舉兩得 😂</p>
+<h2 id="Larry-Lu"><a href="#Larry-Lu" class="headerlink" title="Larry Lu"></a>Larry Lu</h2><h3 id="Things-I-hate-about-Rust"><a href="#Things-I-hate-about-Rust" class="headerlink" title="Things I hate about Rust"></a><a href="https://blog.yossarian.net/2020/05/20/Things-I-hate-about-rust" target="_blank" rel="noopener">Things I hate about Rust</a></h3><p>看到這篇真的深有同感，我自己寫 Rust 也好一陣子了，但到現在還是分不太清楚 <code>&amp;str</code>、<code>String</code>、<code>OsString</code> 這幾種字串到底誰是誰、彼此間要怎麼轉換。每次也都要跟編譯器奮戰好久才能過關，真心覺得那些用 Rust 開發大型應用的人超厲害</p>
+<h3 id="Faking-stdin-and-stdout-in-Go"><a href="#Faking-stdin-and-stdout-in-Go" class="headerlink" title="Faking stdin and stdout in Go"></a><a href="https://eli.thegreenplace.net/2020/faking-stdin-and-stdout-in-go/" target="_blank" rel="noopener">Faking stdin and stdout in Go</a></h3><p>在 Go 裡面，有時會需要對某些從 stdin/stdout 進行輸入輸出的 function 進行測試，但因為從 stdin/stdout 很難用程式化的方式來測，所以可以把 stdin/stdout 進行轉向，這樣就不用再手動用終端機做測試了～</p>
+<h3 id="From-Node-to-Deno"><a href="#From-Node-to-Deno" class="headerlink" title="From Node to Deno"></a><a href="https://dev.to/aralroca/from-node-to-deno-5gpn" target="_blank" rel="noopener">From Node to Deno</a></h3><p>雖然 Deno 看起來很多地方都設計得比 Node 好，但因為 Node 在經過日積月累之後生態圈已經很成熟了，而 Deno 卻是剛起步而已，所以就算真的要用 Deno 開發應用也很可能面臨找不到 package 可用的囧境。而這篇文章就是在說如果你打算從 Node 換到 Deno，那該用哪些 Deno package 來做到類似 express、pm2、nodemon 等等 Node package 的功能，不用連很多基本的功能都要自己刻一遍</p>
+<h2 id="LukaTW"><a href="#LukaTW" class="headerlink" title="LukaTW"></a>LukaTW</h2><h3 id="Interviewed-with-Triplebyte-Your-profile-is-about-to-become-public"><a href="#Interviewed-with-Triplebyte-Your-profile-is-about-to-become-public" class="headerlink" title="Interviewed with Triplebyte? Your profile is about to become public"></a><a href="https://news.ycombinator.com/item?id=23279837" target="_blank" rel="noopener">Interviewed with Triplebyte? Your profile is about to become public</a></h3><p>Triplebyte 是一家線上考試平台，提供面試者做題目，並讓企業參考。本篇作者用 Triplebyte 面試過後一陣子，突然收到一封 CEO 的信，Triplebyte 宣布一個很令人興奮的消息，讓你的個人資訊變成展示案例！讓你的個人資訊公開在網路上。這個不尊重隱私的作法立刻受到 HN 上鄉民的撻伐。</p>
+<h3 id="Ikea-swaps-its-brand-typeface-to-Google-and-Monotype’s-Noto"><a href="#Ikea-swaps-its-brand-typeface-to-Google-and-Monotype’s-Noto" class="headerlink" title="Ikea swaps its brand typeface to Google and Monotype’s Noto"></a><a href="https://www.itsnicethat.com/news/ikea-changes-typeface-to-noto-monotype-google-graphic-design-210819" target="_blank" rel="noopener">Ikea swaps its brand typeface to Google and Monotype’s Noto</a></h3><p>Ikea 將字型從原本一直在使用的 Ikea Sans 換成了 <a href="https://www.itsnicethat.com/news/google-monotype-noto-type-family-061016" target="_blank" rel="noopener">Noto</a>，Noto 字型家族屬於 Monotype and Google。來看看使用了 10 年的 Ikea Sans 跟新的 Noto 呈現出來的感覺有什麼差別吧！第一次分享設計的文章感覺很不錯，以後要多多分享才是。</p>
+<h3 id="Kubetab-kubectl-plugin-to-deploy-intercepting-proxies-to-K8s-Services"><a href="#Kubetab-kubectl-plugin-to-deploy-intercepting-proxies-to-K8s-Services" class="headerlink" title="Kubetab - kubectl plugin to deploy intercepting proxies to K8s Services"></a><a href="https://soluble-ai.github.io/kubetap/" target="_blank" rel="noopener">Kubetab - kubectl plugin to deploy intercepting proxies to K8s Services</a></h3><p>Kubetab，圖案是一杯生啤和一個水龍頭，然後一堆手繪圖案。我還以為是來搞笑的，沒想到看完影片後感覺很好用。Kubetab 是一個 kubectl plugin，可以讓你的瀏覽器攔截 Kubernetes Proxy，在瀏覽器中就可以顯示 K8S 的服務。</p>
+<h2 id="smalltown"><a href="#smalltown" class="headerlink" title="smalltown"></a>smalltown</h2><h3 id="Grafana-也來到-7-0-啦～"><a href="#Grafana-也來到-7-0-啦～" class="headerlink" title="Grafana 也來到 7.0 啦～"></a><a href="https://grafana.com/blog/2020/05/18/grafana-v7.0-released-new-plugin-architecture-visualizations-transformations-native-trace-support-and-more/" target="_blank" rel="noopener">Grafana 也來到 7.0 啦～</a></h3><p>感覺這一年來 Grafana 的開發力道相當的驚人，譬如意圖想要取代 ELK 的 Loki, 以及用來儲存 Time Serier Metric 的 Cortex，不過其最招牌的當然還是 Grafana，這次的發布相當驚人@@ 多了好多恐怖又實用的功能，讓我們來瞧瞧看有什麼吧！</p>
+<ul>
+<li><p>UX Enhancements and Unified Data Model: 加強了使用者體驗跟視覺化設定的選項，例如多了新的 Table Panel，Grid Layout，而且也改善了編輯 Panel 時的體驗；在資料視覺化的方面，改良過的 Data Model 使其擁有更一致性的設定方式，讓資料的各種格式設定不再散落於各處</p>
+</li>
+<li><p>Plugins Platform: 新的套件平台讓使用者可以更快且有效率的新增 Plugin</p>
+</li>
+<li><p>Tracing: 透過使用 Jaeger 當成資料來源便可以支援 Tracing 功能</p>
+</li>
+<li><p>Transformations: 這是滿多使用者要求的功能之一，現在使用者可以把非時間序列的資料轉換到 Table 中 (例如外部資料庫或是既有的 Panel)， 除此之外還可以將這些非時間序列的資料結合存在於 Grafana 裡面的任何資料，並且透過 join, pivot, filter, re-name 來取得你想要的結果，用以客製化 Panel</p>
+</li>
+<li><p>Inspect and Export: 透過新的 Panel Inspector 可以讓使用者把整理完的資料給輸出成 CSV 檔案</p>
+</li>
+<li><p>AWS CloudWatch Logs: 一直以來都有支援 AWS CloudWatch，沒有想到現在連 AWS CloudWatch Logs 都吃下來了 </p>
+</li>
+<li><p>Usage Analytics and Presence: 這個 Enterprise 的功能幫助大型公司得知大家使用 Grafana 的情況，譬如得知大家最常看哪個 Dashboard，誰最常用…等</p>
+</li>
+</ul>
+<h3 id="Terraform-0-13-準備在下個月釋出啦！"><a href="#Terraform-0-13-準備在下個月釋出啦！" class="headerlink" title="Terraform 0.13 準備在下個月釋出啦！"></a><a href="https://github.com/hashicorp/terraform/issues/25016" target="_blank" rel="noopener">Terraform 0.13 準備在下個月釋出啦！</a></h3><p>最近看到同事分享 Terraform 0.13 準備在下個月釋出的消息，目前自己公司內部是正在慢慢 Refactory 並且升級到 0.12 當中，0.13 提到兩個我個人也覺得滿重要的更新</p>
+<ul>
+<li>Provider 的安裝來源可以自訂，不用一定需要從官方來的 (這點滿重要的，因為有時候官方的 Provider 其實不太符合自己的組織需求，或是開發的太慢；就可以自己客製化)</li>
+<li>Module 這邊很多為人詬病的問題可能都可以獲得解決，例如有 count 跟 for_each，而我自己覺得最重要的 depends_on 目前官方開發團隊正在趕工中，並且期望可以一起在 0.13 一起完成</li>
+</ul>
+<p>這樣一來大家從 0.11 往上升級的意願應該會在高一些了吧XD</p>
+<h3 id="15-testing-methods-all-developers-should-know"><a href="#15-testing-methods-all-developers-should-know" class="headerlink" title="15 testing methods all developers should know"></a><a href="https://circleci.com/blog/testing-methods-all-developers-should-know/" target="_blank" rel="noopener">15 testing methods all developers should know</a></h3><p>在軟體業界工作時可以發現，有時候某些技術術語在不同的公司明明是指同一件事情，但卻可能使用不同的名字來稱呼，測試領域就常常會發生這樣的事情XD 而隨著越來越多的公司在實踐 DevOps 的過程中，對軟體測試跟測試自動化的重視程度也越來越高，為了不要讓大家迷失在不同的專業術語中，circleci 這篇文章嘗試將軟體測試常見的類型給列了出來</p>
+<ol>
+<li>Unit testing: 測試邏輯的完整性，測出每一段程式碼應該要做的事情</li>
+<li>Integration testing: 測試在不同元件或是模組間彼此關係和資料流程的完整性</li>
+<li>End-to-End testing (E2E, System): 確保整個應用程式或是系統運作符合預期</li>
+<li>Acceptance testing: 驗證產品跟功能是否有根據客戶所提出的規格來進行開發</li>
+<li>White box testing (structural, clear box): 在軟體詳的細資訊和內部工作方式是已知的情況下來進行測試</li>
+<li>Black box testing (functional, behavioral, closed box): 在軟體詳的細資訊和內部工作方式是未知的情況下來進行測試</li>
+<li>Gray box testing: 因為黑箱跟白箱測試可能會導致某些重要的功能沒有測試到，所以有了灰箱測試，既可以輕鬆地實現黑箱測試 (輸入-&gt;輸出)，並且又可以針對特定的程式碼進行白箱測試</li>
+<li>Manual testing: 手動測試當然就是使用者手動輸入東西並且跟系統進行互動，最後也是由使用者來評斷測試的結果</li>
+<li>Static testing: 不真的去執行程式碼的測試方式，就像手動測試一樣會比較緩慢，但可以提早發現問題，例如有些公司會有 Code Review 的機制</li>
+<li>Dynamic testing: 實際執行代碼的測試方式，其實上面提到的測試方式，大部分都算是在此類別中，除了手動和某些 acceptance tseting</li>
+<li>UI/Visual testing (browser testing): 針對使用者介面操作行為的測試方式</li>
+<li>Smoke testing: 相對小的測試案例集合，用來驗證系統是否可以正常運作</li>
+<li>Regression testing: 用來驗證先前可以正常使用的功能是否都還可以運行無誤</li>
+<li>Load testing: 測試應用程式在工作量增加的情況下會如何回應</li>
+<li>Penetration testing: 滲透測試為一種安全測試，用來驗證應用程式的安全穩定性</li>
+</ol>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://medium.com/@larry850806" target="_blank" rel="noopener">@Larry850806</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>想看什麼內容，告訴我們！ <a href="https://starbugs.typeform.com/to/mAk2Bk" target="_blank" rel="noopener">點我回饋意見</a></p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/06/02/31-good-weather-make-me-happy/"><img class="prev_cover lozad" data-src="/img/031cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 31 期 - 梅雨季節沒下雨就是開心啦</span></div></a></div><div class="next-post pull-right"><a href="/2020/05/19/29-fake-git-commit/"><img class="next_cover lozad" data-src="/img/029cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

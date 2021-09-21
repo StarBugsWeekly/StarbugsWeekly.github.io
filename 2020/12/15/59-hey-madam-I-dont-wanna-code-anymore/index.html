@@ -1,0 +1,113 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 59 期 - 阿姨，我不想寫程式了！ | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 59 期 - 阿姨，我不想寫程式了！"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2020/12/15/59-hey-madam-I-dont-wanna-code-anymore/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 59 期 - 阿姨，我不想寫程式了！"><meta name="twitter:description" content="第 59 期 - 阿姨，我不想寫程式了！"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/059cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 59 期 - 阿姨，我不想寫程式了！"><meta property="og:url" content="https://weekly.starbugs.dev/2020/12/15/59-hey-madam-I-dont-wanna-code-anymore/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 59 期 - 阿姨，我不想寫程式了！"><meta property="og:image" content="https://weekly.starbugs.dev/img/059cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事" href="https://weekly.starbugs.dev/2020/12/22/60-kubernetes-distribution/"><link rel="next" title="第 58 期 - 我會披星戴月的 Debug" href="https://weekly.starbugs.dev/2020/12/08/58-debug-day-and-night/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 59 期 - 阿姨，我不想寫程式了！</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2020-12-15</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="打造舒適的-Windows-開發環境-—-WSL-終端機組合技"><a href="#打造舒適的-Windows-開發環境-—-WSL-終端機組合技" class="headerlink" title="打造舒適的 Windows 開發環境 — WSL + 終端機組合技"></a><a href="https://medium.com/starbugs/%E6%89%93%E9%80%A0%E8%88%92%E9%81%A9%E7%9A%84-windows-%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83-terminal-%E7%B5%82%E7%AB%AF%E6%A9%9F%E8%88%87-wsl-76d9abdd7fae" target="_blank" rel="noopener">打造舒適的 Windows 開發環境 — WSL + 終端機組合技</a></h3><p>筆者是個 Mac / Linux 重度使用者，學生時期使用 Windows 開發實在雷，光是搞環境平均就要花一個禮拜以上。再換成一台二手的 Macbook 之後就一路大順暢，從此只用 Mac / Linux 環境開發。直到最近看到強者我朋友用 Windows 用得滿順的，不僅 Web 這些比較通用的東西跑得順，連 Linux 套件和 Docker 甚至 K8S 都可以順利執行。於是我就買了一台 Windows 電腦，那就來打造出能夠媲美 Linux 開發環境的舒適 Windows 開發體驗吧！</p>
+<h2 id="星巴哥專欄作者，原創文章"><a href="#星巴哥專欄作者，原創文章" class="headerlink" title="星巴哥專欄作者，原創文章"></a>星巴哥專欄作者，原創文章</h2><h3 id="ReactConf-AU-2020-筆記-Part-2"><a href="#ReactConf-AU-2020-筆記-Part-2" class="headerlink" title="ReactConf AU 2020 | 筆記 - Part 2"></a><a href="https://medium.com/starbugs/reactconf-au-2020-note-part2-99ce51a00a08" target="_blank" rel="noopener">ReactConf AU 2020 | 筆記 - Part 2</a></h3><p>之前看了 4 場 ReactConf AU 2020 的演講後，最近又陸續看了幾場，每一場真的都收益良多。但是礙於 medium 寫文章的長度，只能先整理 2 場跟大家分享。在整理了 2 場的演講筆記後，當我在整理第 3 場時，突然跳出通知說 medium 無法儲存太長的文章 😅。</p>
+<p>這篇筆記包括兩場演講，分別是 react-final-form 作者 Erik Rasmussen 所演講的 Modern Forms in React，以及 emotion 的維護者 Mitchell Hamilton 帶來的 Building with Monorepos。</p>
+<h2 id="前端開發"><a href="#前端開發" class="headerlink" title="前端開發"></a>前端開發</h2><h3 id="The-Import-On-Interaction-Pattern"><a href="#The-Import-On-Interaction-Pattern" class="headerlink" title="The Import On Interaction Pattern"></a><a href="https://addyosmani.com/blog/import-on-interaction/?fbclid=IwAR28mdETvIvr4SXokURbpSCECddB4CjbVZItVFjGIu0cRyGjAv-x1SbcDcU" target="_blank" rel="noopener">The Import On Interaction Pattern</a></h3><p>有時候我們在開發網頁的時候，可能會載入一些使用者不會馬上使用或看見的 JavaScript 或是資料，而那些東西往往會造成網頁在第一次載入的時候花費太長的時間。此篇文章會介紹一些載入資源的方式，圖文並茂講得非常清楚！</p>
+<h3 id="What-is-the-HTML-tag-and-why-do-I-need-it"><a href="#What-is-the-HTML-tag-and-why-do-I-need-it" class="headerlink" title="What is the HTML tag and why do I need it?"></a><a href="https://dev.to/dailydevtips1/what-is-the-wbr-html-tag-and-why-do-i-need-it-2fok" target="_blank" rel="noopener">What is the HTML tag and why do I need it?</a></h3><p>在英文單字超級長的時候，我們會希望控制他們在頁面上的斷行方式，此文章的作者就介紹了 HTML 的 <code>&lt;wbr&gt;</code> 標籤，讓我們可以控制英文單字的換行位置，然後亮眼的不只有 <code>&lt;wbr&gt;</code>，還有下方第一則留言所使用的 <code>&amp;shy;</code>！私心認為 <code>&amp;shy;</code> 看起來比較好 😂，至於他們有什麼不一樣，快點進去文章看看吧！</p>
+<h3 id="Vue-Router4-0"><a href="#Vue-Router4-0" class="headerlink" title="Vue Router4.0"></a><a href="https://github.com/vuejs/vue-router-next/releases/tag/v4.0.0" target="_blank" rel="noopener">Vue Router4.0</a></h3><p>Vue Router4.0 的穩定版也隨著 Vue3 之後，終於在 12/8 發佈啦！現在的 Vue Router 被分成三個 Modules，分別為處理 address 的 History implementation、還有解析 routes 的 Router Matcher 和負責將每個 routes 聯繫起來的 Router！除了程式碼的組織架構改變之外，還改善了前代的哪些功能呢？快快快快看吧 🙌！</p>
+<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h3 id="Mutability-and-Immutability-in-Python"><a href="#Mutability-and-Immutability-in-Python" class="headerlink" title="Mutability and Immutability in Python"></a><a href="https://medium.com/datadriveninvestor/mutable-and-immutable-python-2093deeac8d9" target="_blank" rel="noopener">Mutability and Immutability in Python</a></h3><p>這篇文章在解釋 Python 中的 mutable 跟 Immutable objects，而且也講解了 alias 跟 clone 的差異，很適合剛入門 Python 的人看看</p>
+<h3 id="Pythonic-實踐：實用的-python-慣用法整理"><a href="#Pythonic-實踐：實用的-python-慣用法整理" class="headerlink" title="Pythonic 實踐：實用的 python 慣用法整理"></a><a href="https://mropengate.blogspot.com/2020/07/pythonic-python.html" target="_blank" rel="noopener">Pythonic 實踐：實用的 python 慣用法整理</a></h3><p>Python 的語法跟其他語言比起來非常簡單而且有彈性，因此也誕生了許多專屬的寫法，而這篇文章就是要教你怎麼把程式碼寫得 pythonic，把 Python 的語法糖跟特性完全發揮出來</p>
+<h3 id="Profiling-CPython-at-Instagram"><a href="#Profiling-CPython-at-Instagram" class="headerlink" title="Profiling CPython at Instagram"></a><a href="https://link.medium.com/O6D3RMIpHab" target="_blank" rel="noopener">Profiling CPython at Instagram</a></h3><p>Instagram 後端的商業邏輯是用 Python 寫成的，而這篇就是他們在分享要怎麼蒐集需要的資訊，並且找出是什麼原因導致效能不好，很不錯的實務經驗分享</p>
+<h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><p>這週來推薦幾個在 GitHub 上面看到的有趣 repository，不得不說 GitHub 果然是全世界最大的工程師交流網站，上面總是會有一些奇奇怪怪的 repo XD</p>
+<h3 id="screeps"><a href="#screeps" class="headerlink" title="screeps"></a><a href="https://github.com/screeps/screeps" target="_blank" rel="noopener">screeps</a></h3><p>以前有在 minecraft 裡面玩 minecraft，現在也有套件可以在讓你邊玩遊戲邊練習 JavaScript 了！而且最後還會為了 CPU 以及 Memory 資源而需要優化自己的演算法，網路上也有很多人會分享自己的演算法，看到一堆大大都會分享 O(n) 之類的寫法就覺得自嘆不如，大家不妨也可以下載下來玩玩看XD</p>
+<h3 id="xash3d"><a href="#xash3d" class="headerlink" title="xash3d"></a><a href="https://github.com/FWGS/xash3d" target="_blank" rel="noopener">xash3d</a></h3><p>不曉得大家之前有沒有看過一篇報導是：<a href="https://today.line.me/tw/v2/article/Counter+Strike+1+6+%E7%B6%B2%E9%A0%81%E7%89%88%EF%BC%8COK+Let%E2%80%99s+Go+%E5%85%8D%E5%AE%89%E8%A3%9D%E9%96%8B%E7%80%8F%E8%A6%BD%E5%99%A8%E5%B0%B1%E8%83%BD%E7%B7%9A%E4%B8%8A%E7%8E%A9-GmDoNy" target="_blank" rel="noopener">CS 1.6 網頁版</a>，那時候的我看到之後就職業病發作跑去看一下到底是如何做出網頁版的 CS，看了一下作者介紹後才知道原來是用了這款 3D 建模工具，如果大家想要開發網頁小遊戲來練功的話，就可以使用這個套件了。</p>
+<h3 id="Turnip-Calculator"><a href="#Turnip-Calculator" class="headerlink" title="Turnip-Calculator"></a><a href="https://github.com/elxris/Turnip-Calculator" target="_blank" rel="noopener">Turnip-Calculator</a></h3><p>前陣子非常流行的動物森友會不曉得大家有沒有玩過呢(謎之音：那遊戲早就過氣了好了，現在大家都在搶 PS5 了XD)<br>總之那時候我為了判斷每天的大頭菜是否要出售，尤其我又是一個賭性堅強的人所以有時候我就會不小心錯過應該要賣出的機會，沒想到就有大大直接寫了一個大頭菜計算機的網頁而且還有發佈在 GitHub 上，所以就可以知道動物森友會背後用來計算大頭菜的演算法了(其實這個才是目的XDD</p>
+<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><h3 id="Goodbye-CentOS-T-T-Hello-Rocky-Linux"><a href="#Goodbye-CentOS-T-T-Hello-Rocky-Linux" class="headerlink" title="Goodbye CentOS T_T Hello Rocky Linux ^_^"></a><a href="https://www.zdnet.com/article/goodbye-centos-hello-rocky-linux/" target="_blank" rel="noopener">Goodbye CentOS T_T Hello Rocky Linux ^_^</a></h3><p>這週對於維運圈最大的新聞莫過於 CentOS 被 RedHat 拋棄，將把資源從 CentOS Linux 轉移到 CentOS Stream (更新比 RHEL 快且不穩定的版本)，而且預計 2020/12/31 終止對CentOS Linux 8 的支援，只能說有錢就是任性，先把開源專案納入麾下，接著做出重大變更殺得原來的使用者措手不及，這不知道是第幾次了</p>
+<p>在 CentOS 使用者於社群媒體上一片哀嚎遍野的抱怨下，CentOS 的 Co-Founder, Gregory Kurtzer 宣佈將另外發布 RHEL 的重製版 Rocky Linux 來取代目前的 CentOS Linux, 讓我想起之前的 CoreOS 被 RedHat 改成 Fedora CoreOS 之後，也有了 FlatCar 的誕生</p>
+<h3 id="School-of-SRE"><a href="#School-of-SRE" class="headerlink" title="School of SRE"></a><a href="https://linkedin.github.io/school-of-sre/" target="_blank" rel="noopener">School of SRE</a></h3><p>Linkedin 於 2019 年初開始於印度各地的校園招募，以確保使用複雜技術所推疊而成的服務可以一直維持高品質，而關鍵點就在於 SRE 團隊的召募上，在過程中不少相似的問題一再被提出，例如 SRE 的角色到底需要承擔什麼樣的問題，而想要朝此領域發展的話，需要哪一些技能跟知識？關於 SRE 的角色和職責，例如：監控，生產環境事件處理，定義 SLO/SLI…等，網路上散佈著大量的資源，但卻很少有資源可以指導一個人掌握這些基本技能，設定好一個初學者必須具備的條件，由於這些資源的匱乏導致很難招募到人進入該行業的職位，為此 Linkedin 創立了 SRE 學院，在本課程中專注於建立強大的基礎技能，涵蓋底下主題：</p>
+<ul>
+<li>Fundamentals Series<ul>
+<li>Linux Basics</li>
+<li>Git</li>
+<li>Linux Networking</li>
+</ul>
+</li>
+<li>Python and Web</li>
+<li>Data<ul>
+<li>Relational databases(MySQL)</li>
+<li>NoSQL concepts</li>
+<li>Big Data</li>
+</ul>
+</li>
+<li>Systems Design</li>
+<li>Security</li>
+</ul>
+<h3 id="Netflix-ConsoleMe"><a href="#Netflix-ConsoleMe" class="headerlink" title="Netflix ConsoleMe"></a><a href="https://github.com/Netflix/consoleme" target="_blank" rel="noopener">Netflix ConsoleMe</a></h3><p>這幾天發現 Netflix 有一個開源專案叫做 ConsoleMe，它可以將多個 AWS 帳號整合到同一個介面中一起管理，允許一般開發者與系統維運人員取得不同帳號的 Credential，而且可以讓不同角色的使用者請求和管理雲端資源權限，這算是看到目前為止 Netflix 開源的專案中最平易近人得了吧XD 畢竟多重帳號算是在中大型組織使用 AWS 必備的基本要件了！</p>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Writers:</p>
+<ul>
+<li><a href="https://medium.com/@hannahlin" target="_blank" rel="noopener">@HannahLin</a> - 從台灣到矽谷，熱愛前端的工程師女孩。</li>
+<li><a href="https://oldmo860617.medium.com/" target="_blank" rel="noopener">@Kyle老莫</a> - 無法忍受自己一天不進步的熱血社會菜雞。</li>
+<li><a href="https://medium.com/@airwaves" target="_blank" rel="noopener">@Airwaves</a> - Hi~我是 Airwaves，熱愛研究如何造輪子的前端工程師。</li>
+<li><a href="https://medium.com/@jinghua.shih" target="_blank" rel="noopener">@Jenny</a> - 我不寫 CSS。</li>
+</ul>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@w5151381guy" target="_blank" rel="noopener">@Andy</a> - 目標成為用嘴巴工作的工程師，專長為網頁開發以及 K8s。</li>
+</ul>
+<p>Maintainers:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://larry850806.medium.com" target="_blank" rel="noopener">@Larry850806</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術。</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>本週呈現主題方式做了一些改變，希望讓讀者能夠更快速精準的找到自己要的資訊。也加入社群活動這個區塊，每週更新社群活動的資訊。如果有任何建議，歡迎私訊 <a href="https://www.facebook.com/StarBugsWeekly/" target="_blank" rel="noopener">星巴哥技術週刊 FB 粉絲專頁</a> 與我們聯繫。</p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/12/22/60-kubernetes-distribution/"><img class="prev_cover lozad" data-src="/img/060cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事</span></div></a></div><div class="next-post pull-right"><a href="/2020/12/08/58-debug-day-and-night/"><img class="next_cover lozad" data-src="/img/058cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 58 期 - 我會披星戴月的 Debug</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

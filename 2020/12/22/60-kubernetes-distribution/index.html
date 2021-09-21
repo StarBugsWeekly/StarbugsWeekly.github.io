@@ -1,0 +1,99 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事 | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2020/12/22/60-kubernetes-distribution/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事"><meta name="twitter:description" content="第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/060cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事"><meta property="og:url" content="https://weekly.starbugs.dev/2020/12/22/60-kubernetes-distribution/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事"><meta property="og:image" content="https://weekly.starbugs.dev/img/060cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 61 期 - 天氣冷，每天睡到傻呼呼" href="https://weekly.starbugs.dev/2020/12/29/61-so-cold-every-day/"><link rel="next" title="第 59 期 - 阿姨，我不想寫程式了！" href="https://weekly.starbugs.dev/2020/12/15/59-hey-madam-I-dont-wanna-code-anymore/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 60 期 - Kubernetes Distribution 元年 - EKS Distro 想要說的事</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2020-12-22</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="Kubernetes-Distribution-元年-EKS-Distro-想要說的事"><a href="#Kubernetes-Distribution-元年-EKS-Distro-想要說的事" class="headerlink" title="Kubernetes Distribution 元年 - EKS Distro 想要說的事"></a><a href="https://medium.com/starbugs/kubernetes-distribution-%E5%85%83%E5%B9%B4-eks-distro-%E6%83%B3%E8%A6%81%E8%AA%AA%E7%9A%84%E4%BA%8B-b3fb732b5afe" target="_blank" rel="noopener">Kubernetes Distribution 元年 - EKS Distro 想要說的事</a></h3><p>自己本身就是 K8s Distribution 的開發者，最近 AWS re:Invent 2020 宣佈推出 AWS EKS Distro，自己嘗試了一下之後，有一點想把這些年自己對於 K8s Distribution 的所見所聞分享出來，因此撰寫了此篇文章</p>
+<h2 id="星巴哥專欄作者，原創文章"><a href="#星巴哥專欄作者，原創文章" class="headerlink" title="星巴哥專欄作者，原創文章"></a>星巴哥專欄作者，原創文章</h2><h3 id="身為-Web-工程師，你一定要知道的幾個-Web-資訊安全議題"><a href="#身為-Web-工程師，你一定要知道的幾個-Web-資訊安全議題" class="headerlink" title="身為 Web 工程師，你一定要知道的幾個 Web 資訊安全議題"></a><a href="https://medium.com/starbugs/%E8%BA%AB%E7%82%BA-web-%E5%B7%A5%E7%A8%8B%E5%B8%AB-%E4%BD%A0%E4%B8%80%E5%AE%9A%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%B9%BE%E5%80%8B-web-%E8%B3%87%E8%A8%8A%E5%AE%89%E5%85%A8%E8%AD%B0%E9%A1%8C-29b8a4af6e13" target="_blank" rel="noopener">身為 Web 工程師，你一定要知道的幾個 Web 資訊安全議題</a></h3><p>身為一個 Web 工程師，我們也許非常注重使用者體驗與網頁效能，希望使用者可以在使用產品的時候感到愉悅，也希望網頁無論是資源的載入速度或是頁面的渲染，甚至是後端 server 的效能，都可以盡量追求最佳化，然而如果忽略了網站的安全性，以至於服務上產生許多漏洞，讓不法之人可以趁機攻擊，那麼使用者體驗再好，效能再快的網站，都是脆弱 (Vulnerable) 且不及格的 。而這篇文將會以 Web 工程師的角度出發，說明一些我認為 Web 開發者應該要知道的資安議題，內容會包括：</p>
+<ul>
+<li>XSS (Cross-site scripting)</li>
+<li>SQL Injection</li>
+<li>CSRF</li>
+<li>ClickJacking</li>
+<li>Open Redirect</li>
+<li>DOS</li>
+<li>Insecure Direct Object Reference Vulnerability</li>
+</ul>
+<h2 id="前端開發"><a href="#前端開發" class="headerlink" title="前端開發"></a>前端開發</h2><h3 id="Understanding-Memory-Management-in-JavaScript"><a href="#Understanding-Memory-Management-in-JavaScript" class="headerlink" title="Understanding Memory Management in JavaScript"></a><a href="https://hackernoon.com/understanding-memory-management-in-javascript-wx2f31wx" target="_blank" rel="noopener">Understanding Memory Management in JavaScript</a></h3><p>大家都知道在 JavaScript 中為變數指定值的時候會分配到內存，但是在 JavaScript 裡面並沒有如 C 那樣可以手動管理內存的 <a href="https://pubs.opengroup.org/onlinepubs/009695399/functions/malloc.html?ref=hackernoon.com" target="_blank" rel="noopener">malloc()</a> 與 <a href="https://en.wikipedia.org/wiki/C_dynamic_memory_allocation?ref=hackernoon.com#Overview_of_functions" target="_blank" rel="noopener">free()</a>，那麼 JavaScript 到底是如何判斷什麼時候該釋放那些不再用到的內存呢？一起來看看吧！</p>
+<h3 id="this-vs-that"><a href="#this-vs-that" class="headerlink" title="this-vs-that"></a><a href="https://github.com/phuoc-ng/this-vs-that" target="_blank" rel="noopener">this-vs-that</a></h3><p>咦？這兩個屬性看起來都一樣啊？在剛學前端的時候總是會看到一堆語法都在處理類似的事情，但是它們到底有什麼不一樣啊？對！相信不會只有你感到疑惑，本週推薦的這個 repo 就來一一揭開那些長得很像的東西到底哪裡不同！</p>
+<h3 id="CSS-Frosted-glass-credit-card"><a href="#CSS-Frosted-glass-credit-card" class="headerlink" title="CSS Frosted glass credit card"></a><a href="https://dev.to/dailydevtips1/css-frosted-glass-credit-card-3lak" target="_blank" rel="noopener">CSS Frosted glass credit card</a></h3><p>最近毛玻璃的設計風格好像很紅，那就來分享用原生 CSS 一步步來完成的小作品（雖然除了毛玻璃效果外還多了許多動畫 😂）！除了文章中的介紹外，下方的留言區也有提供一個超強的毛玻璃效果產生器 <a href="https://glassmorphism.com/" target="_blank" rel="noopener">Glassmorphism</a>。</p>
+<h2 id="Golang"><a href="#Golang" class="headerlink" title="Golang"></a>Golang</h2><h3 id="Golang-lt-time-After-is-not-garbage-collected-before-expiry"><a href="#Golang-lt-time-After-is-not-garbage-collected-before-expiry" class="headerlink" title="Golang &lt;-time.After() is not garbage collected before expiry"></a><a href="https://medium.com/@oboturov/golang-time-after-is-not-garbage-collected-4cbc94740082" target="_blank" rel="noopener">Golang &lt;-time.After() is not garbage collected before expiry</a></h3><p>這篇文章很短，大概三分鐘就可以看完，內容是在說 Go 的 <code>time.After()</code> 在時間到之前不會被 GC 清掉，所以如果在短時間內大量使用 timer，可能會讓記憶體使用量突然暴增，進而導致 OOM(Out Of Memory)</p>
+<h3 id="Testing-in-Go-—-Some-tools-you-can-use"><a href="#Testing-in-Go-—-Some-tools-you-can-use" class="headerlink" title="Testing in Go — Some tools you can use"></a><a href="https://medium.com/@andrewdavisescalona/testing-in-go-some-tools-you-can-use-f3e79b398d8d" target="_blank" rel="noopener">Testing in Go — Some tools you can use</a></h3><p>雖然 Go 有內建的測試工具可以使用，但因為有些功能仍然做不到，所以這篇文章分享了一些工具可以幫你輕易做到比較複雜的 Assertion、Mocking 還有自動產生 Mock，如果專案比較大、覺得內建的測試功能不夠用了可以試試</p>
+<h3 id="Rust-vs-Go"><a href="#Rust-vs-Go" class="headerlink" title="Rust vs Go"></a><a href="https://bitfieldconsulting.com/golang/rust-vs-go" target="_blank" rel="noopener">Rust vs Go</a></h3><p>關於 Rust vs Go 的文章之前已經看過很多，不過這篇是我看過少數算是比較公正的，除了比較他們的語言特性之外，也有提到他們各自的設計理念。所以如果是有寫過 Rust 想學 Go、或是反過來想學 Rust，那可以先看看這篇，說不定之後會比較好上手</p>
+<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><h3 id="gitlab-ci-cd"><a href="#gitlab-ci-cd" class="headerlink" title="gitlab ci/cd"></a><a href="https://medium.com/nick-%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%AD%B8%E7%BF%92%E8%A8%98/%E6%95%99%E5%AD%B8-gitlab-ci-%E5%85%A5%E9%96%80%E5%AF%A6%E4%BD%9C-%E8%87%AA%E5%8B%95%E5%8C%96%E9%83%A8%E7%BD%B2%E7%AF%87-ci-cd-%E7%B3%BB%E5%88%97%E5%88%86%E4%BA%AB%E6%96%87-cbb5100a73d4" target="_blank" rel="noopener">gitlab ci/cd</a></h3><p>由於公司使用 gitlab 作為版本控制的網站，以前只有用過 github 以及 bitbucket 的我瞬間覺得 gitlab 能做到的事情真的有夠多，從 ci/cd 開始 gitlab 可以自動化執行非常多的功能，只要先設定好 <code>.gitlab-ci.yml</code> 就可以很輕鬆地達到 ci/cd 的效果，當然這邊只是自動化去觸發 ci/cd 而已，真正執行這些流程的還是需要依賴其他的工具來使用。</p>
+<h3 id="gitlab-runner"><a href="#gitlab-runner" class="headerlink" title="gitlab runner"></a><a href="https://docs.gitlab.com/runner/" target="_blank" rel="noopener">gitlab runner</a></h3><p>想要順利執行 gitlab ci/cd 的流程必須要利用 gitlab runner 才可以執行，runner 簡單來說就是去跑這些自動化流程的 worker，必須要有 runner 才有資源去執行這些自動化流程，gitlab 的自動化流程也非常簡單，官網都有懶人做法非常適合我這種剛碰 DevOps 的人XD</p>
+<h3 id="cloud-build"><a href="#cloud-build" class="headerlink" title="cloud build"></a><a href="https://cloud.google.com/cloud-build/docs/build-config" target="_blank" rel="noopener">cloud build</a></h3><p>前面提到 gitlab 只是執行自動化流程而已，真正的去跑 ci/cd 還是要依賴其他的工具，這邊推薦 google 的 cloud build 而且 google 相當佛心每天都有 120 分鐘免費 build 的時間，很適合我這種擁有客家精神的工程師XD</p>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Writers:</p>
+<ul>
+<li><a href="https://medium.com/@hannahlin" target="_blank" rel="noopener">@HannahLin</a> - 從台灣到矽谷，熱愛前端的工程師女孩。</li>
+<li><a href="https://oldmo860617.medium.com/" target="_blank" rel="noopener">@Kyle老莫</a> - 無法忍受自己一天不進步的熱血社會菜雞。</li>
+<li><a href="https://medium.com/@airwaves" target="_blank" rel="noopener">@Airwaves</a> - Hi~我是 Airwaves，熱愛研究如何造輪子的前端工程師。</li>
+<li><a href="https://medium.com/@jinghua.shih" target="_blank" rel="noopener">@Jenny</a> - 我不寫 CSS。</li>
+</ul>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@w5151381guy" target="_blank" rel="noopener">@Andy</a> - 目標成為用嘴巴工作的工程師，專長為網頁開發以及 K8s。</li>
+</ul>
+<p>Maintainers:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://larry850806.medium.com" target="_blank" rel="noopener">@Larry850806</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術。</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>本週呈現主題方式做了一些改變，希望讓讀者能夠更快速精準的找到自己要的資訊。也加入社群活動這個區塊，每週更新社群活動的資訊。如果有任何建議，歡迎私訊 <a href="https://www.facebook.com/StarBugsWeekly/" target="_blank" rel="noopener">星巴哥技術週刊 FB 粉絲專頁</a> 與我們聯繫。</p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/12/29/61-so-cold-every-day/"><img class="prev_cover lozad" data-src="/img/061cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 61 期 - 天氣冷，每天睡到傻呼呼</span></div></a></div><div class="next-post pull-right"><a href="/2020/12/15/59-hey-madam-I-dont-wanna-code-anymore/"><img class="next_cover lozad" data-src="/img/059cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 59 期 - 阿姨，我不想寫程式了！</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

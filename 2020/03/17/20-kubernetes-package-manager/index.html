@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 20 期 - YAML Engineer 的愛恨情仇 | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 20 期 - YAML Engineer 的愛恨情仇"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2020/03/17/20-kubernetes-package-manager/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 20 期 - YAML Engineer 的愛恨情仇"><meta name="twitter:description" content="第 20 期 - YAML Engineer 的愛恨情仇"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/020cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 20 期 - YAML Engineer 的愛恨情仇"><meta property="og:url" content="https://weekly.starbugs.dev/2020/03/17/20-kubernetes-package-manager/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 20 期 - YAML Engineer 的愛恨情仇"><meta property="og:image" content="https://weekly.starbugs.dev/img/020cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 21 期 - 學完密碼學，還是記不住自己的密碼" href="https://weekly.starbugs.dev/2020/03/24/21-still-forget-password-after-learning-cryptography/"><link rel="next" title="第 19 期 - 用超萌的汪與喵來理解 HTTP Status Code！" href="https://weekly.starbugs.dev/2020/03/10/19-dogs-and-cats-with-http-status-code/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 20 期 - YAML Engineer 的愛恨情仇</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2020-03-17</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="Helm-3-踹踹看-—-YAML-Engineer-的愛恨情仇"><a href="#Helm-3-踹踹看-—-YAML-Engineer-的愛恨情仇" class="headerlink" title="Helm 3 踹踹看 — YAML Engineer 的愛恨情仇"></a><a href="https://medium.com/starbugs/helm-3-%E8%B8%B9%E8%B8%B9%E7%9C%8B-9e7c443fbd7a" target="_blank" rel="noopener">Helm 3 踹踹看 — YAML Engineer 的愛恨情仇</a></h3><p>雖然使用 K8S 會讓人變成充滿怨念的 YAML Engineer，不過我想這也是他可以變成主流 Container Orchestration 的原因之ㄧ，因為不管是開發或是維運人員，只要將運行在 K8S 內的應用服務使用 YAML 檔案格式定義好就可以一起使用，這一週想要分享如何把 Helm2 升級到 Helm3，除此之外也會介紹自己常用的 Helmfile</p>
+<h2 id="神-Q-超人"><a href="#神-Q-超人" class="headerlink" title="神 Q 超人"></a>神 Q 超人</h2><h3 id="Storybook-addons-與他的快樂夥伴"><a href="#Storybook-addons-與他的快樂夥伴" class="headerlink" title="Storybook | addons 與他的快樂夥伴"></a><a href="https://medium.com/%E6%89%8B%E5%AF%AB%E7%AD%86%E8%A8%98/storybook-addons-aa56601aed9a" target="_blank" rel="noopener">Storybook | addons 與他的快樂夥伴</a></h3><p>好不容易寫好了一個自己相當滿意的 Component，但又對再另外花時間描述該 Component 的使用方法感到疲憊，有時候又很難以文字表現出該 Component 的行為或操作方法，而 Storybook 拯救了這一切！它可以記錄你所建構的元件擁有什麼樣的功能，就像一本故事書一樣，描述著屬於該 Component 的故事：）</p>
+<h3 id="The-Best-Developer-Communities-to-Join-in-2020"><a href="#The-Best-Developer-Communities-to-Join-in-2020" class="headerlink" title="The Best Developer Communities to Join in 2020"></a><a href="https://www.freecodecamp.org/news/best-developer-communities-to-be-part-of-in-2020/" target="_blank" rel="noopener">The Best Developer Communities to Join in 2020</a></h3><p>在 2020 年，開發者絕不能錯過這 20 個最讚的技術社群，一起吸收這世界都在用程式討論哪些事情！當然除了他們以外也別忘了還有 StarBugs 陪著大家 😉。</p>
+<h3 id="YouTube-怎麼禁止手機使用者背景播放的？透過-Chrome-開發者工具-深度尋訪-YouTube-的前端程式碼"><a href="#YouTube-怎麼禁止手機使用者背景播放的？透過-Chrome-開發者工具-深度尋訪-YouTube-的前端程式碼" class="headerlink" title="YouTube 怎麼禁止手機使用者背景播放的？透過 Chrome 開發者工具 深度尋訪 YouTube 的前端程式碼"></a><a href="https://medium.com/@realdennis/youtube-%E6%80%8E%E9%BA%BC%E7%A6%81%E6%AD%A2%E6%89%8B%E6%A9%9F%E4%BD%BF%E7%94%A8%E8%80%85%E8%83%8C%E6%99%AF%E6%92%AD%E6%94%BE%E7%9A%84-%E6%B7%B1%E5%BA%A6%E5%B0%8B%E8%A8%AA-youtube-%E7%9A%84%E5%89%8D%E7%AB%AF%E7%A8%8B%E5%BC%8F%E7%A2%BC-2551e0941f75" target="_blank" rel="noopener">YouTube 怎麼禁止手機使用者背景播放的？透過 Chrome 開發者工具 深度尋訪 YouTube 的前端程式碼</a></h3><p>很喜歡作者說「YouTube 的 Front-end Engineer 也不是用魔法在寫 code ，所以勢必是透過 JavaScript 、 Browser 的 API 所賦予的能力」，任何在網頁上面看見的東西、酷炫的技巧等等，都有辦法被你創造出來（除了動畫啦 😂）！就從這篇文章開始當個偵探，以後看見喜歡的神奇功能時，就能試著瞧瞧他們是怎麼做到的！</p>
+<h2 id="Larry-Lu"><a href="#Larry-Lu" class="headerlink" title="Larry Lu"></a>Larry Lu</h2><h3 id="Database-basics-writing-a-SQL-database-from-scratch-in-Go"><a href="#Database-basics-writing-a-SQL-database-from-scratch-in-Go" class="headerlink" title="Database basics: writing a SQL database from scratch in Go"></a><a href="http://notes.eatonphil.com/database-basics.html" target="_blank" rel="noopener">Database basics: writing a SQL database from scratch in Go</a></h3><p>這篇教你怎麼用 Go 從無到有寫出一個簡單的 DB，並且提供 <code>CREATE</code>、<code>SELECT</code> 跟 <code>INSERT</code> 指令，如果你對 DB 的內部構造有興趣的話，這篇文章很適合你讀</p>
+<h3 id="Elixir-Style-Actors-in-Go"><a href="#Elixir-Style-Actors-in-Go" class="headerlink" title="Elixir-Style Actors in Go"></a><a href="https://preslav.me/2020/03/07/elixir-style-actors-in-golang/" target="_blank" rel="noopener">Elixir-Style Actors in Go</a></h3><p>Go 原本的併發模型是 CSP(Communicating Sequential Processes)，也就是透過輕量的 thread(goroutine) 來做到併發，thread 之間的溝通則是使用 channel。但透過把 goroutine 當成一個有狀態的 actor，並且以 channel 來傳遞 message，可以在 Go 裡面實現類似 Elixir 的 Actor model，挺有趣的</p>
+<h3 id="Early-Impressions-of-Go-from-a-Rust-Programmer"><a href="#Early-Impressions-of-Go-from-a-Rust-Programmer" class="headerlink" title="Early Impressions of Go from a Rust Programmer"></a><a href="https://pingcap.com/blog/early-impressions-of-go-from-a-rust-programmer/" target="_blank" rel="noopener">Early Impressions of Go from a Rust Programmer</a></h3><p>這是一篇 Rust 開發者去學 Go 之後寫的心得文，也是我看過最平衡的比較文，Rust 跟 Go 其實可以是好朋友，不需要再比哪個語言比較好，找到適合自己的就可以了</p>
+<h2 id="LukaTW"><a href="#LukaTW" class="headerlink" title="LukaTW"></a>LukaTW</h2><h3 id="你要的-React-面试知识点，都在这了"><a href="#你要的-React-面试知识点，都在这了" class="headerlink" title="你要的 React 面试知识点，都在这了"></a><a href="https://segmentfault.com/a/1190000019339210" target="_blank" rel="noopener">你要的 React 面试知识点，都在这了</a></h3><p>什麼是聲明式語言？聲明式語言是一種語言範式，它關注的是你要做什麼，而不是如何做。它表達邏輯而不顯式地定義步驟。這意味著我們需要根據邏輯的計算來聲明要顯示的組件。它沒有描述控制流步驟。聲明式語言的例子：HTML、SQL等</p>
+<h3 id="React-Hooks-详解-【近-1W-字】-项目实战"><a href="#React-Hooks-详解-【近-1W-字】-项目实战" class="headerlink" title="React Hooks 详解 【近 1W 字】+ 项目实战"></a><a href="https://juejin.im/post/5dbbdbd5f265da4d4b5fe57d#heading-17" target="_blank" rel="noopener">React Hooks 详解 【近 1W 字】+ 项目实战</a></h3><p>什麼是 Hooks？React 一直都提倡使用函數元件，但是有時候需要使用 state 或者其他一些功能時，只能使用類元件，因為函數元件沒有實例，沒有生命週期函數，只有 Class 元件才有。Hooks 是 React 16.8 新增的特性，它可以讓你在不編寫 class 的情況下使用 state 以及其他的 React 特性。如果你在編寫函數元件並意識到需要向其添加一些 state，以前的做法是必須將其它轉化為 class。現在你可以直接在現有的函數元件中使用 Hooks。凡是 use 開頭的 React API 都是 Hooks。</p>
+<h3 id="React源码解析-一-组件的实现与挂载"><a href="#React源码解析-一-组件的实现与挂载" class="headerlink" title="React源码解析(一):组件的实现与挂载"></a><a href="https://juejin.im/post/5983dfbcf265da3e2f7f32de" target="_blank" rel="noopener">React源码解析(一):组件的实现与挂载</a></h3><p>當我們能夠熟練運用React進行前端開發時，不免會對React內部機制產生濃厚的興趣。元件是什麼？是真的DOM嗎？生命週期函數的執行依據又是什麼呢？本篇，我們先來研究React組件的實現與掛載。</p>
+<h2 id="smalltown"><a href="#smalltown" class="headerlink" title="smalltown"></a>smalltown</h2><h3 id="來瞧瞧看-Uber-怎麼測試與開發內部的-Microservice"><a href="#來瞧瞧看-Uber-怎麼測試與開發內部的-Microservice" class="headerlink" title="來瞧瞧看 Uber 怎麼測試與開發內部的 Microservice"></a><a href="https://eng.uber.com/multitenancy-microservice-architecture" target="_blank" rel="noopener">來瞧瞧看 Uber 怎麼測試與開發內部的 Microservice</a></h3><p>Uber 工程師的績效評估來自於多快將新功能部署到 Production 環境中，在 Microservice 架構中搭配著快速地開發節奏要如何確保高 SLA 便成為不小的挑戰，而 Uber 解決問題的方式為貫徹 Multi-Tenant ！此文分享從測試，部署，開發時要注意哪些事情</p>
+<ul>
+<li><p><strong>測試的選擇與挑戰</strong></p>
+<ul>
+<li><p><strong>Parallel Testing</strong>：準備一個跟 Production 一樣的測試環境 (這應該是最常見的做法)</p>
+<ul>
+<li><strong>額外的建置成本</strong>：畢竟要準備另外一套完整的環境，資料庫，機器…等，都是要多燒錢的</li>
+<li><strong>同步問題</strong>：如何確保測試環境跟 Production 環境一直保持一致性</li>
+<li><strong>測試的不可靠性</strong>：譬如自己想要測試 Service A，但是 Service B 上了一包爛 Build 導致你不能測試…</li>
+<li><strong>不確定的服務負載</strong>：在測試環境中作效能測試的結果要如何評估到真實環境中</li>
+</ul>
+</li>
+<li><p><strong>Testing in Production</strong>：讓 Production 環境的服務具有 Multi-Tenant 的能力來允許接受來自測試和 Production 的請求</p>
+<ul>
+<li><strong>請求的導流</strong>：必須要可以根據請求是來自測試或是正式環境來做導流</li>
+<li><strong>隔離性</strong>：測試和 Production 的資源要具有良好的隔離性，測試環境不能影響到正式環境</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>部署的方式</strong></p>
+<ul>
+<li><p><strong>Canary Deployment</strong>：就算新版的 Build 已經過詳細的 Review 和 Testing，還是不想要一次讓所有的請求都直接使用新版本，而是在 Multi-Tenant 的架構下，將 Canary 視為一個獨立的 Tenant ，然後再根據請求的使用者屬性 (用路類型，產品類型…等) 把部分請求導流到 Canary 中</p>
+</li>
+<li><p><strong>Capture/Replay and Shadow Traffic</strong>：將 Production 環境中的正式流量給錄製擷取下來當作整合測試使用，其實就像上面提過的架構一樣，所以可以相對輕易地將 Production 環境的請求導流至想要測試的 Microservice</p>
+</li>
+</ul>
+</li>
+<li><p><strong>實作與開發</strong><br>在 Multi-Tenant Microservice 架構中，每個 Tenant 都被視為 First Class Object 然後根據各種靜態和請求中的動態資料來組成 Context，整個系統便是根據這些 Context 來決定請求該被導流到哪邊去</p>
+<ul>
+<li><p><strong>Tenancy Context</strong>：Tenancy Context 要在請求進入 Edge Gateway 時就被附加上去，而且在其生命週期中都不再會被改變</p>
+</li>
+<li><p><strong>Context Propagation</strong>：必須讓請求發出時同時傳遞 Context，而大部分的服務可能不需要查看 Context，但是某些可能會需要透過評估 Context 來決定要不要繞過某些業務邏輯，譬如某些跟金流相關的請求，假如是發生在測試請求時，就不需要真的跟銀行要求轉移資金之類的，而且請求的 Context 有時也需要被傳遞到靜態跟動態的資料物件中</p>
+</li>
+<li><p><strong>Tenancy-Based Routing</strong>：一旦系統有能力可以把請求 Tag 成某一個 Tenancy，那就可以決定要將其導流到測試環境，上面提到用來做整合測試的錄製流量，Canary Deployment…等，一般來說在服務的 egress 和 ingress 都可以把 Tenancy-Based Routing 給實作進去，而且在選擇解決方案還滿重要的，目前有一些 Service Mesh 的開源專案，例如 Envoy 或是 Istio 就可以考慮看看，因為可以利用 Side Car 的特性來幫忙導流請求</p>
+</li>
+<li><p><strong>Data Isolation</strong>：必須要有辦法根據不同的 Tenancy 將 Logging, Metrics, Storage, Message Queues, Caches 跟 Configuration 給切開來</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://medium.com/@larry850806" target="_blank" rel="noopener">@Larry850806</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>想看什麼內容，告訴我們！ <a href="https://starbugs.typeform.com/to/mAk2Bk" target="_blank" rel="noopener">點我回饋意見</a></p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/03/24/21-still-forget-password-after-learning-cryptography/"><img class="prev_cover lozad" data-src="/img/021cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 21 期 - 學完密碼學，還是記不住自己的密碼</span></div></a></div><div class="next-post pull-right"><a href="/2020/03/10/19-dogs-and-cats-with-http-status-code/"><img class="next_cover lozad" data-src="/img/019cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 19 期 - 用超萌的汪與喵來理解 HTTP Status Code！</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

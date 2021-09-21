@@ -1,0 +1,104 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 88 期 - 有微解封，不知道有沒有微開發？ | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 88 期 - 有微解封，不知道有沒有微開發？"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2021/07/06/88-public-cloud-network-security/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 88 期 - 有微解封，不知道有沒有微開發？"><meta name="twitter:description" content="第 88 期 - 有微解封，不知道有沒有微開發？"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/088cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 88 期 - 有微解封，不知道有沒有微開發？"><meta property="og:url" content="https://weekly.starbugs.dev/2021/07/06/88-public-cloud-network-security/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 88 期 - 有微解封，不知道有沒有微開發？"><meta property="og:image" content="https://weekly.starbugs.dev/img/088cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 89 期 - 微解封後，也要繼續手手勤洗洗，病毒遠離你喔！" href="https://weekly.starbugs.dev/2021/07/13/89-keep-virus-away-from-you/"><link rel="next" title="第 87 期 - 我要成為海碼王！" href="https://weekly.starbugs.dev/2021/06/29/87-one-piece-coder/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 88 期 - 有微解封，不知道有沒有微開發？</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2021-07-06</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="Public-Cloud-Network-兩三事-沒有最安全只有更安全"><a href="#Public-Cloud-Network-兩三事-沒有最安全只有更安全" class="headerlink" title="Public Cloud Network 兩三事 - 沒有最安全只有更安全"></a><a href="https://medium.com/starbugs/public-cloud-network-%E5%85%A9%E4%B8%89%E4%BA%8B-%E6%B2%92%E6%9C%89%E6%9C%80%E5%AE%89%E5%85%A8%E5%8F%AA%E6%9C%89%E6%9B%B4%E5%AE%89%E5%85%A8-a6b3eee059cc" target="_blank" rel="noopener">Public Cloud Network 兩三事 - 沒有最安全只有更安全</a></h3><p>使用 Public Cloud 要如何規劃網路架構才算安全呢？其實端看組織的資源與要求，剛好最近花了一些時間在整理網路相關的工作任務，趁著這個機會把自己透過工作碰到學到的 Public Cloud 網路議題給整理成文章，透過簡易的情境設計對應到不同公司的規模或是需求之下，可以選擇什麼樣的解決方案與替代做法，讓大家可以用最短的時間獲得最多的知識</p>
+<h2 id="前端開發"><a href="#前端開發" class="headerlink" title="前端開發"></a>前端開發</h2><h3 id="10-CSS-things-I-wish-I-knew-when-I-was-a-beginner"><a href="#10-CSS-things-I-wish-I-knew-when-I-was-a-beginner" class="headerlink" title="10 CSS things I wish I knew when I was a beginner"></a><a href="https://levelup.gitconnected.com/10-css-things-i-wish-i-knew-when-i-was-a-beginner-68ba4b5b3da8" target="_blank" rel="noopener">10 CSS things I wish I knew when I was a beginner</a></h3><p>文中中提到一些滿基本的觀念，當然還是有些爭議的內容，像是文章中有提到要淘汰 Bootstrap 這點，其實想要快速開發網頁還是會希望從一個方便好用的 UI 框架開始 😂。另外我覺得滿有趣的是他所提到 RWD 的 desktop first 和 mobile first 的區別和看法，大家可以先思考，然後再點進去看看原因和你想的一不一樣！ 🙌</p>
+<h3 id="JavaScript-How-to-Redirect-to-Another-Webpage"><a href="#JavaScript-How-to-Redirect-to-Another-Webpage" class="headerlink" title="JavaScript: How to Redirect to Another Webpage"></a><a href="https://stackabuse.com/javascript-how-to-redirect-to-another-webpage" target="_blank" rel="noopener">JavaScript: How to Redirect to Another Webpage</a></h3><p>在開發網頁的時候，為了更好的使用者體驗，通常都會需要幫使用者重新導向新的頁面，但是在 JavaScript 能夠達到相同功能的方式在文章中就介紹了 <code>location.href</code>、<code>windows.location</code>、<code>location.assign()</code> 和 <code>location.replace()</code> 四種，這四種又有什麼不同呢？到底該用哪的方式會最適合使用者？</p>
+<h3 id="三种前端实现VR全景看房的方案！说不定哪天就用得上！"><a href="#三种前端实现VR全景看房的方案！说不定哪天就用得上！" class="headerlink" title="三种前端实现VR全景看房的方案！说不定哪天就用得上！"></a><a href="https://juejin.cn/post/6973865268426571784" target="_blank" rel="noopener">三种前端实现VR全景看房的方案！说不定哪天就用得上！</a></h3><p>一直覺得在網頁前端顯示的 VR 實景展示超帥，但是都沒有機會好好瞭解到底該如何在前端中加入 VR 實景。而在這篇文章中，作者就舉出了三種方案實現 VR 技術，可以看看要把哪一個方案加入你的口袋名單！</p>
+<h3 id="The-trouble-with-TypeScript-enums"><a href="#The-trouble-with-TypeScript-enums" class="headerlink" title="The trouble with TypeScript enums"></a><a href="https://thoughtbot.com/blog/the-trouble-with-typescript-enums" target="_blank" rel="noopener">The trouble with TypeScript enums</a></h3><p>很多人開始使用 typescript 後總是會遇到很多 type error，這篇文章介紹了關於使用 enum 時會遇到的 type error 以及如何解決，有遇到任何跟 enum 有關的問題的讀者都不妨可以藉由這個文章找到解答喔~</p>
+<h3 id="JavaScript-Tips-and-Best-Practices"><a href="#JavaScript-Tips-and-Best-Practices" class="headerlink" title="JavaScript Tips and Best Practices"></a><a href="https://dev.to/apoorvtyagi/javascript-tips-and-best-practices-48ma" target="_blank" rel="noopener">JavaScript Tips and Best Practices</a></h3><p>這篇文章真的蠻厲害的，介紹了很多 JavaScript 不同的寫法以及一些比較好閱讀的 coding style 來幫助工程師們進行 JavaScript 的撰寫，有興趣改變自己寫法的讀者不妨可以收藏起來日後可以閱讀。</p>
+<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><h3 id="Reducing-Memory-Allocations-in-Golang"><a href="#Reducing-Memory-Allocations-in-Golang" class="headerlink" title="Reducing Memory Allocations in Golang"></a><a href="https://chris124567.github.io/2021-06-21-go-performance/" target="_blank" rel="noopener">Reducing Memory Allocations in Golang</a></h3><p>這篇文章完美示範了怎麼對你的 Go 程式做 profile，並且著手去改善 memory allocation 的次數。雖然一般情況下 Go 寫出來的程式效能都還不錯，但真的需要調整時就需要用 pprof 下去分析了</p>
+<h3 id="How-to-correctly-use-Basic-Authentication-in-Go"><a href="#How-to-correctly-use-Basic-Authentication-in-Go" class="headerlink" title="How to correctly use Basic Authentication in Go"></a><a href="https://www.alexedwards.net/blog/basic-authentication-in-go" target="_blank" rel="noopener">How to correctly use Basic Authentication in Go</a></h3><p>這篇文章介紹了什麼是 basic authentication（就是輸入網址後需要打帳號密碼那種驗證方式），並且教你怎麼在 Go 裡面實作，雖然這種方式現在已經比較少見，但有時想保護自己的網頁時還是不錯的選擇</p>
+<h3 id="Contributing-the-Go-Compiler-Adding-New-Tilde-Operator"><a href="#Contributing-the-Go-Compiler-Adding-New-Tilde-Operator" class="headerlink" title="Contributing the Go Compiler: Adding New Tilde (~) Operator"></a><a href="https://medium.com/trendyol-tech/contributing-the-go-compiler-adding-new-tilde-operator-f66d0c6cff7" target="_blank" rel="noopener">Contributing the Go Compiler: Adding New Tilde (~) Operator</a></h3><p>這篇文非常非常的長，內容主要在講說怎麼加一個新的 operator 到 Go 的編譯器中，如果想了解 Go 編譯器的原理這篇真的不錯（但可能要讀兩三個小時就是XD）</p>
+<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><h3 id="不用拘泥於程式只能寫到幾歲，而是以後還需要工程師嗎？！"><a href="#不用拘泥於程式只能寫到幾歲，而是以後還需要工程師嗎？！" class="headerlink" title="不用拘泥於程式只能寫到幾歲，而是以後還需要工程師嗎？！"></a><a href="https://github.blog/2021-06-29-introducing-github-copilot-ai-pair-programmer/" target="_blank" rel="noopener">不用拘泥於程式只能寫到幾歲，而是以後還需要工程師嗎？！</a></h3><p>標題下得有點危言聳聽，其實是想要提 GitHub 推出了 AI Pair Programmer 的服務 - GitHub Copilot，他可以根據你正在寫的程式碼對某幾行或是整個 Function 提出建議，讓工程師可以更快發現更多的選擇來解決問題，撰寫測試和不透過 Google 搜尋就知道想要整合的 API 要如何使用</p>
+<p>而這個服務的底層是使用 OpenAI Codex，他是一個使用 OpenAI 建立出來的 AI 系統，因為他使用廣大的公開程式碼做訓練，所以比 GPT-3 更能夠勝任產生程式碼的工作，而在目前的 Technical Preview 版本中，主要是針對 #Python, #JavaScript, #TypeScript, #Ruby 和 #Go 這幾種語言在訓練，有興趣的人現在可以報名加入 waitlist 中</p>
+<h3 id="Top-10-Useful-GitHub-Browser-Extensions"><a href="#Top-10-Useful-GitHub-Browser-Extensions" class="headerlink" title="Top 10 Useful GitHub Browser Extensions"></a><a href="https://dev.to/abanoub7asaad/top-10-useful-github-browser-extensions-2k2d" target="_blank" rel="noopener">Top 10 Useful GitHub Browser Extensions</a></h3><p>這篇文章介紹了十個可以用來增加開發者使用 GitHub 時的生產力的 Chrome Extension，看完介紹後，有幾個真的令我感到腦洞大開，迫不期待安裝來使用！</p>
+<ol>
+<li><a href="https://github.com/ovity/octotree" target="_blank" rel="noopener">Octotree</a>: 直接讓瀏覽器多出 Repository 的檔案瀏覽功能，讓開發者在 Code Review 跟找檔案的時候來的更方便</li>
+<li><a href="https://github.com/softvar/enhanced-github" target="_blank" rel="noopener">Enhanced GitHub</a>: 顯示整個 Repostiroy 和每個檔案的大小，並且加上下載連結跟複製檔案內容的按鈕</li>
+<li><a href="https://github.com/noam3127/github-code-folding" target="_blank" rel="noopener">GitHub Code Folding</a>: 可以直接在 GitHub 網頁上使用折疊功能，把不需要看到的程式碼所屬的 Code Block 藏起來</li>
+<li><a href="https://github.com/sourcegraph/sourcegraph/tree/main/client/browser" target="_blank" rel="noopener">Sourcegraph</a>: 直接找到程式碼中該函釋定義或是參照的程式碼在哪裡 (目前可以使用在 Go, java, TypeScript, JavaScript 跟 Python)</li>
+<li><a href="https://github.com/tanmayrajani/notifications-preview-github" target="_blank" rel="noopener">Notifications Preview for GitHub</a>: 讓 GitHub 通知功能更好用，顯示通知個數，預覽通知內容，並可以在預覽時標示為已讀或是不再訂閱該通知</li>
+<li><a href="https://github.com/homerchen19/github-file-icons" target="_blank" rel="noopener">File Icons for GitHub and GitLab</a>: 給予程式碼檔案不同的 ICON</li>
+<li><a href="https://github.com/OctoLinker/OctoLinker" target="_blank" rel="noopener">OctoLinker</a>: 對於程式碼中 include, require 和 import 的 library 提供超連結，讓使用者直接點過去看</li>
+<li><a href="https://github.com/jasonlong/isometric-contributions" target="_blank" rel="noopener">GitHub Isometric Contributions</a>: 可以把 GitHub 的 Contribution 圖轉換成不一樣的顯示方式，甚至變成 3D 的</li>
+<li><a href="https://github.com/N1ck/gifs-for-github" target="_blank" rel="noopener">GIFs for GitHub</a>: 讓開發者更方便搜尋 GIPHY 中的 GIF 圖檔加在回覆裡</li>
+<li><a href="https://github.com/sindresorhus/refined-github" target="_blank" rel="noopener">Refined GitHub</a>: 讓 GitHub 更好用的 Extension，例如讓空白可視化，按一鍵就可以 Merge Conflict，看到有哪些人在 Comment 按下表情符號，讓你在 PR 或是 Issue 中把不必要的 Comment 隱藏起來，在程式碼中把 Issue/PR 連結起來…等</li>
+</ol>
+<h3 id="FinOps-for-Kubernetes-Insufficient-–-or-nonexistent-–-Kubernetes-cost-monitoring-is-causing-overspend"><a href="#FinOps-for-Kubernetes-Insufficient-–-or-nonexistent-–-Kubernetes-cost-monitoring-is-causing-overspend" class="headerlink" title="FinOps for Kubernetes: Insufficient – or nonexistent – Kubernetes cost monitoring is causing overspend"></a><a href="https://www.cncf.io/blog/2021/06/29/finops-for-kubernetes-insufficient-or-nonexistent-kubernetes-cost-monitoring-is-causing-overspend/" target="_blank" rel="noopener">FinOps for Kubernetes: Insufficient – or nonexistent – Kubernetes cost monitoring is causing overspend</a></h3><p>根據 CNCF 的調查，去年有 68% 的人表示他們花在 Kubernetes 相關的成本增加了，而且其中一半的表示一整年增加超過了 20%，這樣的趨勢其實是在預期中的，因為有越來越多的組織採用的 Cloud Native 架構並跟著擴展 K8s 環境；不過根據報告同時也揭露了上升的成本其實跟使用者無法精確且有效的監控或是預測 K8s 成本有關，這造成了不必要的過度花費；<a href="https://blog.kubecost.com/blog/wasteful-kubernetes-spending/" target="_blank" rel="noopener">Kubecost</a> 也順道趁著這個機會來推廣大家使用它節省在 K8s 相關的開銷，Loft.sh 也發了篇<a href="https://loft.sh/blog/the-cost-of-managed-kubernetes-a-comparison/" target="_blank" rel="noopener">文章</a>比較各家 K8s 託管服務的價錢</p>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Writers:</p>
+<ul>
+<li><a href="https://medium.com/@hannahlin" target="_blank" rel="noopener">@HannahLin</a> - 從台灣到矽谷，熱愛前端的工程師女孩。</li>
+<li><a href="https://oldmo860617.medium.com/" target="_blank" rel="noopener">@Kyle老莫</a> - 無法忍受自己一天不進步的熱血社會菜雞。</li>
+<li><a href="https://medium.com/@airwaves" target="_blank" rel="noopener">@Airwaves</a> - Hi~我是 Airwaves，熱愛研究如何造輪子的前端工程師。</li>
+<li><a href="https://medium.com/@jinghua.shih" target="_blank" rel="noopener">@Jenny</a> - 我不寫 CSS。</li>
+</ul>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@w5151381guy" target="_blank" rel="noopener">@Andy</a> - 目標成為用嘴巴工作的工程師，專長為網頁開發以及 K8s。</li>
+</ul>
+<p>Maintainers:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://larry850806.medium.com" target="_blank" rel="noopener">@LarryLu</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術。</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>本週呈現主題方式做了一些改變，希望讓讀者能夠更快速精準的找到自己要的資訊。也加入社群活動這個區塊，每週更新社群活動的資訊。如果有任何建議，歡迎私訊 <a href="https://www.facebook.com/StarBugsWeekly/" target="_blank" rel="noopener">星巴哥技術週刊 FB 粉絲專頁</a> 與我們聯繫。</p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/13/89-keep-virus-away-from-you/"><img class="prev_cover lozad" data-src="/img/089cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 89 期 - 微解封後，也要繼續手手勤洗洗，病毒遠離你喔！</span></div></a></div><div class="next-post pull-right"><a href="/2021/06/29/87-one-piece-coder/"><img class="next_cover lozad" data-src="/img/087cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 87 期 - 我要成為海碼王！</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

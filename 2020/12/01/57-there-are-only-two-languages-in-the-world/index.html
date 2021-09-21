@@ -1,0 +1,119 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 57 期 - 世上只有兩種程式語言：被罵得一無是處的，以及沒人在用的 | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 57 期 - 世上只有兩種程式語言：被罵得一無是處的，以及沒人在用的"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2020/12/01/57-there-are-only-two-languages-in-the-world/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 57 期 - 世上只有兩種程式語言：被罵得一無是處的，以及沒人在用的"><meta name="twitter:description" content="第 57 期 - 世上只有兩種程式語言：被罵得一無是處的，以及沒人在用的"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/057cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 57 期 - 世上只有兩種程式語言：被罵得一無是處的，以及沒人在用的"><meta property="og:url" content="https://weekly.starbugs.dev/2020/12/01/57-there-are-only-two-languages-in-the-world/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 57 期 - 世上只有兩種程式語言：被罵得一無是處的，以及沒人在用的"><meta property="og:image" content="https://weekly.starbugs.dev/img/057cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 58 期 - 我會披星戴月的 Debug" href="https://weekly.starbugs.dev/2020/12/08/58-debug-day-and-night/"><link rel="next" title="第 56 期 - 史蒂夫和戴夫也想學的程式交易框架 — BBGO" href="https://weekly.starbugs.dev/2020/11/24/56-program-trading/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 57 期 - 世上只有兩種程式語言：被罵得一無是處的，以及沒人在用的</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2020-12-01</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="以-Go-為例，圖解-Data-Alignment-如何影響記憶體使用量"><a href="#以-Go-為例，圖解-Data-Alignment-如何影響記憶體使用量" class="headerlink" title="以 Go 為例，圖解 Data Alignment 如何影響記憶體使用量"></a><a href="https://medium.com/starbugs/illustrate-how-data-alignment-affects-memory-usage-d29bf9d5bf08" target="_blank" rel="noopener">以 Go 為例，圖解 Data Alignment 如何影響記憶體使用量</a></h3><p>不知道大家在寫 Go 時有沒有注意過，一個 struct 所佔的空間不見得等於各個 field 加起來的空間，甚至有時把 field 宣告的順序調換一下，又會得到不同的結果（其他語言也會有類似的情況）。而今天的文章就是要從 CPU 抓資料的原理開始介紹，然後再講到 Data Structure Alignment（資料結構對齊），希望大家在看完之後能對 CPU 跟記憶體有更多認識～</p>
+<h2 id="好文募集"><a href="#好文募集" class="headerlink" title="好文募集"></a>好文募集</h2><h3 id="找工作必須面對的煎熬與成長-—-國外篇"><a href="#找工作必須面對的煎熬與成長-—-國外篇" class="headerlink" title="找工作必須面對的煎熬與成長 — 國外篇"></a><a href="https://medium.com/starbugs/%E6%89%BE%E5%B7%A5%E4%BD%9C%E5%BF%85%E9%A0%88%E9%9D%A2%E5%B0%8D%E7%9A%84%E7%85%8E%E7%86%AC%E8%88%87%E6%88%90%E9%95%B7-%E5%9C%8B%E5%A4%96%E7%AF%87-5bbbd3c81380" target="_blank" rel="noopener">找工作必須面對的煎熬與成長 — 國外篇</a></h3><p>雖然在 FB 跟 PTT 上三不五時就可以看到有人在分享如何進入 FLAG，但不可否認的是這些人都是強者中的強者，且很多都是名校本科系的。那如果不是這樣的人，想在美國找工作可能會遇到怎麼樣的困難？準備的方向又有什麼不同？一起來看看 Hannah 的分享吧～</p>
+<h2 id="前端開發"><a href="#前端開發" class="headerlink" title="前端開發"></a>前端開發</h2><h3 id="Creating-React-Application-For-Solving-Every-Sudoku-Puzzle"><a href="#Creating-React-Application-For-Solving-Every-Sudoku-Puzzle" class="headerlink" title="Creating React Application For Solving Every Sudoku Puzzle"></a><a href="https://hackernoon.com/creating-react-application-for-solving-every-sudoku-puzzle-26h316j" target="_blank" rel="noopener">Creating React Application For Solving Every Sudoku Puzzle</a></h3><p>該文章的作者用 React 製作了一個友善的前端介面來接其他開發者寫來解數獨的開源專案，作者沒有解釋如何刻出介面，而是分享他在打造畫面的時候思考了什麼。</p>
+<h3 id="Why-Is-gt"><a href="#Why-Is-gt" class="headerlink" title="Why Is {} &gt; [] ?"></a><a href="https://dev.to/amyshackles/why-is-2hkk" target="_blank" rel="noopener">Why Is {} &gt; [] ?</a></h3><p>你知道為什麼在 JavaScript 裡空物件會大於空陣列嗎？我真希望自己可以不需要了解這個，可惜我是個前端工程師。😭</p>
+<h3 id="Stop-Using-“data”-as-a-Variable-Name"><a href="#Stop-Using-“data”-as-a-Variable-Name" class="headerlink" title="Stop Using “data” as a Variable Name"></a><a href="https://dev.to/dcwither/stop-using-data-as-a-variable-name-3954" target="_blank" rel="noopener">Stop Using “data” as a Variable Name</a></h3><p>命名絕對是最困難的事情，但即使困難也不代表可以亂取。文章講解了幾個不是很好的命名例子（也許大家都看到爛了），也提出一些比較有意義的命名前綴讓各位參考。</p>
+<h2 id="Computer-Architecture"><a href="#Computer-Architecture" class="headerlink" title="Computer Architecture"></a>Computer Architecture</h2><h3 id="What-is-the-difference-between-a-32-bit-and-64-bit-system"><a href="#What-is-the-difference-between-a-32-bit-and-64-bit-system" class="headerlink" title="What is the difference between a 32-bit and 64-bit system?"></a><a href="https://techterms.com/help/difference_between_32-bit_and_64-bit_systems" target="_blank" rel="noopener">What is the difference between a 32-bit and 64-bit system?</a></h3><p>如果有自己重灌過系統應該就會看過 32 bit、64 bit、x86、x64 這些關鍵字，但 32 bit 跟 64 bit 究竟是指什麼呢？為什麼 32 bit 系統只能使用 4GB 的記憶體？不太確定答案的話可以趕快看看這篇文章～</p>
+<h3 id="Why-doesn’t-C-make-the-structure-tighter-Stack-Overflow"><a href="#Why-doesn’t-C-make-the-structure-tighter-Stack-Overflow" class="headerlink" title="Why doesn’t C++ make the structure tighter? - Stack Overflow"></a><a href="https://stackoverflow.com/questions/6730664/why-doesnt-c-make-the-structure-tighter" target="_blank" rel="noopener">Why doesn’t C++ make the structure tighter? - Stack Overflow</a></h3><p>在這週的專欄中有提到，Rust 編譯器在三年前就已經實作 struct field reordering，那為什麼歷史更悠久的 C/C++ 卻沒有這麼做呢？其實並不是沒有，而是因為 C/C++ 的標準規定了不可以隨便更換順序，所以預設情況下不會啟用這種最佳化，真的需要的話也可以自己套用</p>
+<h3 id="Optimizing-Rust-Struct-Size-A-6-month-Compiler-Development-Project"><a href="#Optimizing-Rust-Struct-Size-A-6-month-Compiler-Development-Project" class="headerlink" title="Optimizing Rust Struct Size: A 6-month Compiler Development Project"></a><a href="https://camlorn.net/posts/April%202017/rust-struct-field-reordering/" target="_blank" rel="noopener">Optimizing Rust Struct Size: A 6-month Compiler Development Project</a></h3><p>這篇是講 Rust 編譯器在實作 struct field reordering 的過程還有遇到的問題，內容很硬，對編譯器沒興趣的話可能會看到頭痛XD，但有興趣的話可以學到滿多東西</p>
+<h2 id="SEO"><a href="#SEO" class="headerlink" title="SEO"></a>SEO</h2><h3 id="meta-tag"><a href="#meta-tag" class="headerlink" title="meta tag"></a><a href="https://ysnweb.net/2020/01/seo-guide/html-meta-tag-seo/" target="_blank" rel="noopener">meta tag</a></h3><p>HTML 中的 meta tag 一直是大家會忽略的地方，畢竟這些 tag 跟網頁整體的運作比較沒有太大的關連，但 meta tag 對於 SEO 來說就是一種識別符的概念，meta tag 下的好自然而然 SEO 的分數也會高，這篇文章介紹了幾個最常用的 meta tag 甚至還介紹了 <strong>open graph</strong> 這個用來讓社群媒體像是 Facebook、twitter、line 等等用來顯示文章連結標題、圖片、敘述等重要資訊的 tag，假如你的網站會多次分享在社群媒體上 og tag 不妨也一併加入吧！</p>
+<h3 id="Google-SEO-algorithm"><a href="#Google-SEO-algorithm" class="headerlink" title="Google SEO algorithm"></a><a href="https://ranking.works/SEO%E7%AD%96%E7%95%A5/google%E6%BC%94%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">Google SEO algorithm</a></h3><p>俗話說的好：知己知彼方能百戰百勝，想要把 SEO 做好必須先了解 Google 背後是怎麼幫你評分，這篇文章介紹了 Google 用來進行 SEO 評分的重要演算法，而且都是用白話文來介紹，了解這些演算法的內容後日後在開發網頁也比較不會踩到會讓自己網站分數降低的地雷了。</p>
+<h3 id="trust-rank"><a href="#trust-rank" class="headerlink" title="trust rank"></a><a href="https://backlinko.com/google-trustrank" target="_blank" rel="noopener">trust rank</a></h3><p>Google trust rank 簡單來說就是讓你的網站或者是網域信任度提升，只要你的網站越可靠、越被大家信任自然而然 SEO 分數也會高，提升網站信任度最簡單的幾個方法不外乎就是加入聯絡我們頁面、隱私權條款頁面、取用 cookie 按鈕等等，甚至還要有 SSL 憑證以及易讀的網址，這些都是 Google 會拿來評分的條件，這篇文章整理了幾個最簡單而且必做的信任度設定，讓你的網域信任度分數可以越來越高。</p>
+<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><h3 id="Technologies-amp-Tools-to-Watch-in-2021"><a href="#Technologies-amp-Tools-to-Watch-in-2021" class="headerlink" title="Technologies &amp; Tools to Watch in 2021"></a><a href="https://medium.com/dev-genius/technologies-tools-to-watch-in-2021-a216dfc30f25" target="_blank" rel="noopener">Technologies &amp; Tools to Watch in 2021</a></h3><p>一轉眼 2020 年就要過完了，來瞧瞧看 2021 年 DevOps Engineer 和 SRE 們應該要特別留意的技術有哪一些吧？！</p>
+<ul>
+<li><p>透過 Kubernetes CRD 來管理公有雲上的資源：目前三朵雲都已經有提供對應的解決方案 AWS: <a href="https://github.com/aws/aws-controllers-k8s" target="_blank" rel="noopener">ACK (AWS Controllers for Kubernetes)</a>, Azure: <a href="https://github.com/Azure/azure-service-operator" target="_blank" rel="noopener">Azure Service Operator</a>，GCP: <a href="https://cloud.google.com/config-connector/docs/overview" target="_blank" rel="noopener">Config Connector</a>，這些工具跟既有的 IaC 解決方案好像有點牴觸，例如 Terrform, Pulumi，不過優點在於開發者使用同樣的工具除了可以管理 K8s 資源之外，也可以一起管理公有雲的雲端資源</p>
+</li>
+<li><p>Pulumi: 今年獲得 $37.5 million Series B 的融資來挑戰 Terraform 的霸主地位，跟其他 IaC 工具比較不同的地方在於他可以使用一般的程式語言來做開發撰寫 (例如 Go, Python, Javascript)，所以程式語言本來的既有工具也都可以直接拿來做使用，不過有一點要注意的是目前他的社群比 Terraform 還要小得多</p>
+</li>
+<li><p>Terragrunt &amp; TFSEC: <a href="https://terragrunt.gruntwork.io/" target="_blank" rel="noopener">Terragrunt</a> 是 Terraform 的 wrapper，很多 Terraform 的最佳使用守則都是從中而來，而且他最近也宣布的商業支援方案，讓大企業可以用起來更簡單，而 <a href="https://github.com/tfsec/tfsec" target="_blank" rel="noopener">TFSEC</a> 則是針對 Terraform 的 Policy as Code 開源工具，利用靜態分析 IaC 程式碼來找出潛藏的資安威脅，在越來越多人接納 DevSecOps 觀念的當下，類似工具在未來的重要性會越來越高</p>
+</li>
+<li><p>Tekton: CI/CD 市場上有比較老牌成熟的 Jenkins 和 Spinnaker 當然還有最近比較火熱的 Cloud Native 工具例如 ArgoCD, 而 Tekton 算是剛進入這個領域的新玩家，主要聚焦於 K8s，並且使用 K8s CRD 來定義 Pipeline，這讓 Pipeline 擁有 K8s 的原生功能 (例如 rollback) 之外，也可以跟既有的 K8s 工具整合在一起例如 Jenkins X 或是 ArgoCD，這樣一來就可以達成 E2E 的 CI/CD Pipeline</p>
+</li>
+<li><p>Trivy: 容器的 Vulnerability 掃描功能在 CI/CD Pipeline 中的重要性越來越高，在這個市場也有其他的開源工具，例如 <a href="https://github.com/docker/docker-bench-security" target="_blank" rel="noopener">Docker Bench for Security</a>, <a href="https://github.com/quay/clair" target="_blank" rel="noopener">Clair</a> 和 <a href="https://github.com/anchore/anchore-engine" target="_blank" rel="noopener">Anchore Engine</a> (文章中有些不屬於這個領域的被我移除掉了)，而 Trivy 除了掃描 Container 以外，在程式碼中使用的 Package 也會一併檢查，結合屬於同一家公司  Aqua Security 的 <a href="https://github.com/aquasecurity/kube-bench" target="_blank" rel="noopener">kube-bench</a>，就可以讓組織將 Security 更方便地融合在應用程式的開發之中</p>
+</li>
+<li><p>ShellCheck: 雖然有大量用來改善架構的工具，不過 Shell Script 在各種 Workflow 中依然很適合解決簡單的問題，而 ShellCheck 是 Shell Script 的靜態分析工具，可以像程式語言的 Lint 工具，找出語法有問題或是常犯的錯誤，而 ShellCheck 可以運行在 Web, Terminal 或是 CI，當然還可以整合在你最喜愛的文字編輯器中，例如 Vim, Sublime, Atom, VS Code</p>
+</li>
+<li><p>Pitest/Stryker: Pitest (Java) 和 Stryker (Javascript, C#, Scala) 兩個都是用來對特定語言做  Mutation Testing 的工具，Mutation Testing 透過在測試中注入錯誤來看看測試是否還是可以通過的方式來衡量測試的品質，當 Mutation 發生時，一個好的 Unit Testing 應該要失敗才對， 透過 Mutation Testing 來檢查沒有測試到或是測試不足的程式碼，藉以提高 Test Coverage</p>
+</li>
+<li><p>Litmus: Netflix 在 2011 年提出伴隨著 Chaos Monkey 提出 Chaos Engineering 的概念，而在 K8s 的生態系中也有很多 Chaos Engineering 的工具，例如  <a href="https://github.com/linki/chaoskube" target="_blank" rel="noopener">chaoskube</a>, <a href="https://github.com/asobti/kube-monkey" target="_blank" rel="noopener">kube-monkey</a>, <a href="https://github.com/powerfulseal/powerfulseal" target="_blank" rel="noopener">PowerfulSeal</a> 還有商用服務 <a href="https://www.gremlin.com/kubernetes/" target="_blank" rel="noopener">Gremlin</a>，而在這邊想要特別強調 <a href="https://github.com/litmuschaos/litmus" target="_blank" rel="noopener">Litmus</a>，因為他是一個成熟且易於使用的 Chaos Engineering 解決方案，Litmus 是一個輕量級的 Kubernetes Operator，裡面有 ChaosEngine, ChaosExperiment 和 ChaosResult 三個主要元件所組成，Litmus 支援細緻的測試，不只是隨機地把 Namespace 中的 Pod 給砍掉而已，而是透過 ChaosResult CRD 將結果給呈現出來，不會直接要使用者花時間去觀察測試結果</p>
+</li>
+</ul>
+<h3 id="Karpenter"><a href="#Karpenter" class="headerlink" title="Karpenter"></a><a href="https://github.com/awslabs/karpenter" target="_blank" rel="noopener">Karpenter</a></h3><p>Karpenter 是以 Metric 驅動來打造的 Kubernetes Autoscaler，可以運行在任何的 K8s 叢集中，它具有高性能與擴展性，目標為自動縮放運行於 K8s 中的任何使用 <a href="https://github.com/kubernetes/community/blob/master/contributors/design-proposals/autoscaling/horizontal-pod-autoscaler.md#scale-subresource" target="_blank" rel="noopener">Scale Subresource</a> 定義的資源，例如 ReplicationController 和 Deployment，Karpenter 定義了三種客製化的資源來控制 Autoscale 的行為</p>
+<ul>
+<li><p>HorizontalAutoscalers: 用來定義 Autoscaling 的政策，或許大家會想到 HorizontalPodAutoscaler, 不過他應該是發生在 HorizontalPodAutoscaler 被觸發之後，才去幫忙加 K8s 叢集節點的角色，除此之外 Karpenter 可以透過多種不同的資源來做 Scale，因為他深度整合 Prometheus，直接使用 promql 來計算出自己想要的閥值</p>
+</li>
+<li><p>MetricsProducers: 用來建立 autoscaling 所需要 Prometheus Metric，不過假如已經有既有存在的 Metric 可以用的話，就不需要再使用 MetricsProducers 另外定義</p>
+</li>
+<li><p>ScalableNodeGroups: 用來定義控制 K8s Node Group 的 API，因為原生的 K8s 並沒有這種抽象的概念，而 Cloud Provider 提供的 Node Group API 又跟 K8s 其實不一樣，所以使用 ScalableNodeGroups 來當作中間的溝通橋樑，不過假如有用 <a href="https://github.com/kubernetes/kops" target="_blank" rel="noopener">Kops</a> or <a href="https://github.com/kubernetes-sigs/cluster-api" target="_blank" rel="noopener">Cluster API</a> 就可以不用使用 ScalableNodeGroups</p>
+</li>
+</ul>
+<h3 id="Cloud-Native-Nov-2020-Security-Whitepaper"><a href="#Cloud-Native-Nov-2020-Security-Whitepaper" class="headerlink" title="Cloud Native Nov 2020 Security Whitepaper"></a><a href="https://github.com/cncf/sig-security/blob/master/security-whitepaper/CNCF_cloud-native-security-whitepaper-Nov2020.pdf" target="_blank" rel="noopener">Cloud Native Nov 2020 Security Whitepaper</a></h3><p>一個不小心就撿到了 Cloud Native Nov 2020 的 Security Whitepaper，內容從 Cloud Native 本身的開發流程，以及部署，執行環境內的各種細節 (Compute, Storage, Access)，還有大企業比較在意的 Security Assurance 跟 Compliance 都包含在其中，有興趣的人可以下載來看看</p>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Writers:</p>
+<ul>
+<li><a href="https://medium.com/@hannahlin" target="_blank" rel="noopener">@HannahLin</a> - 從台灣到矽谷，熱愛前端的工程師女孩。</li>
+<li><a href="https://oldmo860617.medium.com/" target="_blank" rel="noopener">@Kyle老莫</a> - 無法忍受自己一天不進步的熱血社會菜雞。</li>
+<li><a href="https://medium.com/@airwaves" target="_blank" rel="noopener">@Airwaves</a> - Hi~我是 Airwaves，熱愛研究如何造輪子的前端工程師。</li>
+<li><a href="https://medium.com/@jinghua.shih" target="_blank" rel="noopener">@Jenny</a> - 我不寫 CSS。</li>
+</ul>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@w5151381guy" target="_blank" rel="noopener">@Andy</a> - 目標成為用嘴巴工作的工程師，專長為網頁開發以及 K8s。</li>
+</ul>
+<p>Maintainers:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://larry850806.medium.com" target="_blank" rel="noopener">@Larry850806</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術。</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>本週呈現主題方式做了一些改變，希望讓讀者能夠更快速精準的找到自己要的資訊。也加入社群活動這個區塊，每週更新社群活動的資訊。如果有任何建議，歡迎私訊 <a href="https://www.facebook.com/StarBugsWeekly/" target="_blank" rel="noopener">星巴哥技術週刊 FB 粉絲專頁</a> 與我們聯繫。</p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/12/08/58-debug-day-and-night/"><img class="prev_cover lozad" data-src="/img/058cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 58 期 - 我會披星戴月的 Debug</span></div></a></div><div class="next-post pull-right"><a href="/2020/11/24/56-program-trading/"><img class="next_cover lozad" data-src="/img/056cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 56 期 - 史蒂夫和戴夫也想學的程式交易框架 — BBGO</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 14 期 - 一起擺脫開工倦怠期 | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 14 期 - 一起擺脫開工倦怠期"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2020/02/04/14-performance-of-react/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 14 期 - 一起擺脫開工倦怠期"><meta name="twitter:description" content="第 14 期 - 一起擺脫開工倦怠期"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/014cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 14 期 - 一起擺脫開工倦怠期"><meta property="og:url" content="https://weekly.starbugs.dev/2020/02/04/14-performance-of-react/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 14 期 - 一起擺脫開工倦怠期"><meta property="og:image" content="https://weekly.starbugs.dev/img/014cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 15 期 - 值得紀念的時刻，全台最大的口罩駭客松，Respect!" href="https://weekly.starbugs.dev/2020/02/11/15-mask-hackathon/"><link rel="next" title="第 13 期 - 恭喜呀恭喜～發呀發大財～" href="https://weekly.starbugs.dev/2020/01/28/13-congratulate-and-wish-you-wealth/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 14 期 - 一起擺脫開工倦怠期</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2020-02-04</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="Kubernetes-教學-一-概念與架構-為什麼該學-K8S-？Pod？Node？搞的我好亂呀"><a href="#Kubernetes-教學-一-概念與架構-為什麼該學-K8S-？Pod？Node？搞的我好亂呀" class="headerlink" title="Kubernetes 教學 (一) 概念與架構 - 為什麼該學 K8S ？Pod？Node？搞的我好亂呀"></a><a href="https://medium.com/starbugs/kubernetes-%E6%95%99%E5%AD%B8-%E4%B8%80-%E6%A6%82%E5%BF%B5%E8%88%87%E6%9E%B6%E6%A7%8B-954caa9b1558" target="_blank" rel="noopener">Kubernetes 教學 (一) 概念與架構 - 為什麼該學 K8S ？Pod？Node？搞的我好亂呀</a></h3><p>為什麼該用 Kubernetes? 使用 K8S 的概念可以有哪些好處？真的值得我們一用嘛？好，我們知道為什麼要用了，那接下來，開從哪裡開始，我們從 K8S 的架構開始認識，了解一些重要名詞，開始我們的 K8S 之旅。</p>
+<h2 id="神-Q-超人"><a href="#神-Q-超人" class="headerlink" title="神 Q 超人"></a>神 Q 超人</h2><h3 id="如果你想成為產品經理，我的8個建議"><a href="#如果你想成為產品經理，我的8個建議" class="headerlink" title="如果你想成為產品經理，我的8個建議"></a><a href="https://medium.com/how-gipi-learn/8-suggestions-about-product-manager-552f613641fa" target="_blank" rel="noopener">如果你想成為產品經理，我的8個建議</a></h3><p>在職涯規劃中，要不要轉為 PM 一直都是工程師選擇的路之一，但是誰也不曉得這個決定到底是不是正確的，如果各位朋友在新的一年中，也剛好想嘗試看看自己是否踏上「產品經理」這層階梯，但又對這職位感到高度沒安全感，不如先看看文章內給出的幾點建議。</p>
+<h3 id="A-JavaScript-interview-question-asked-at-Google"><a href="#A-JavaScript-interview-question-asked-at-Google" class="headerlink" title="A JavaScript interview question asked at Google"></a><a href="https://dev.to/coderbyte/a-javascript-interview-question-asked-at-google-19f1" target="_blank" rel="noopener">A JavaScript interview question asked at Google</a></h3><p>我很喜歡看一些面試題，尤其是剛好看見之前被問過的題目，那就更棒了！這篇文章中分享的問題是如何以 JavaScrip 實現類似 Listener 功能的 Class，大家也不妨照著文章一開始描述的題目內容試著實作一遍吧！</p>
+<h3 id="How-to-Write-Beautiful-and-Meaningful-README-md"><a href="#How-to-Write-Beautiful-and-Meaningful-README-md" class="headerlink" title="How to Write Beautiful and Meaningful README.md"></a><a href="https://blog.bitsrc.io/how-to-write-beautiful-and-meaningful-readme-md-for-your-next-project-897045e3f991" target="_blank" rel="noopener">How to Write Beautiful and Meaningful README.md</a></h3><p>製作一個 SideProject 雖然很困難，但是要寫出漂亮的 README.md 更讓人傷透腦筋，就像文章內提到的「有些開發者會花一個小時來調整按鈕的邊距，但卻無法用十五分鐘好好描述這個 Project 的內容」，如果你也有相同的困擾，或是 README.md 上永遠都只有 Project 的名稱，立馬一起學學 🙌</p>
+<h2 id="Larry-Lu"><a href="#Larry-Lu" class="headerlink" title="Larry Lu"></a>Larry Lu</h2><h3 id="瀏覽器的時光機—歷史堆疊、-pushState-與-replaceState-API"><a href="#瀏覽器的時光機—歷史堆疊、-pushState-與-replaceState-API" class="headerlink" title="瀏覽器的時光機—歷史堆疊、 pushState 與 replaceState API"></a><a href="https://medium.com/@moojing/%E7%80%8F%E8%A6%BD%E5%99%A8%E7%9A%84%E6%99%82%E5%85%89%E6%A9%9F-pushstate-replacestate-api-fa1d909c82b0" target="_blank" rel="noopener">瀏覽器的時光機—歷史堆疊、 pushState 與 replaceState API</a></h3><p>隨著現在的前端日漸複雜、前端也有自己的路由系統，有時候瀏覽器預設的上一頁、下一頁功能不見得是開發者想要的，為了讓上下頁能達到預期的效果，這時候只好用 <code>pushState</code> 跟 <code>replaceState</code> 來操作歷史紀錄</p>
+<h3 id="多想三分鐘，你可以少欠很多技術債"><a href="#多想三分鐘，你可以少欠很多技術債" class="headerlink" title="多想三分鐘，你可以少欠很多技術債"></a><a href="https://link.medium.com/Oe3xv9HLI3" target="_blank" rel="noopener">多想三分鐘，你可以少欠很多技術債</a></h3><p>在進行軟體開發時難免都會產生技術債，不可能完全避免，但如果能在事前做好規劃就能少欠很多債，這篇文章用實際例子教你怎麼分析系統，讓你的系統往一個正確的方向前進</p>
+<h3 id="React-Performance-Fixes-on-Airbnb-Listing-Pages"><a href="#React-Performance-Fixes-on-Airbnb-Listing-Pages" class="headerlink" title="React Performance Fixes on Airbnb Listing Pages"></a><a href="https://link.medium.com/nr5bopHMI3" target="_blank" rel="noopener">React Performance Fixes on Airbnb Listing Pages</a></h3><p>Airbnb 的前端是出名的強，這篇是由他們團隊分享怎麼做 React 的效能測試、還有講解怎麼看火焰圖，讀完這篇保證可以讓你變成更強的 React developer</p>
+<h2 id="LukaTW"><a href="#LukaTW" class="headerlink" title="LukaTW"></a>LukaTW</h2><h3 id="REST-API-Guide"><a href="#REST-API-Guide" class="headerlink" title="REST API Guide"></a><a href="https://dev.to/drminnaar/rest-api-guide-14n2" target="_blank" rel="noopener">REST API Guide</a></h3><p>深度了解 REST API 指南，非常完整到位解釋了 REST 的重點。為什麼要使用 REST？ 六個 REST 架構的限制分別是哪些？又為什麼要設計這些限制？ 理查德森成熟度模型又是什麼？怎麼實踐 REST？然後還附上範例，真是太補了。</p>
+<h3 id="71-Python-Code-Snippets-for-Everyday-Problems"><a href="#71-Python-Code-Snippets-for-Everyday-Problems" class="headerlink" title="71 Python Code Snippets for Everyday Problems"></a><a href="https://dev.to/renegadecoder94/71-python-code-snippets-for-everyday-problems-1mep" target="_blank" rel="noopener">71 Python Code Snippets for Everyday Problems</a></h3><p>用問題來分類，用 16 個分類，分類各種需要處理的情況，71 個程式碼片段，來幫助你高效率的腳絕 Python 問題。真實用，作者的網站經營的也很出色，值得一看。</p>
+<h3 id="Top-10-errors-from-1000-Ruby-on-Rails-projects"><a href="#Top-10-errors-from-1000-Ruby-on-Rails-projects" class="headerlink" title="Top 10 errors from 1000+ Ruby on Rails projects"></a><a href="https://dev.to/philnash/top-10-errors-from-1000-ruby-on-rails-projects-and-how-to-avoid-them-24m" target="_blank" rel="noopener">Top 10 errors from 1000+ Ruby on Rails projects</a></h3><p>10 個最常見的 Ruby on Rails 錯誤與解決他們的方法。雖然在 2020 年 Ruby on Rails 又死了一次，但是還是可以藉由這篇來幫助還沒有死掉的 Rails 專案更快速的除錯。</p>
+<h2 id="smalltown"><a href="#smalltown" class="headerlink" title="smalltown"></a>smalltown</h2><h3 id="Kubernetes-Pod-的-Resource-Request-amp-Limit-到底要怎麼設定？！"><a href="#Kubernetes-Pod-的-Resource-Request-amp-Limit-到底要怎麼設定？！" class="headerlink" title="Kubernetes Pod 的 Resource Request &amp; Limit 到底要怎麼設定？！"></a><a href="https://sysdig.com/blog/kubernetes-pod-evicted/" target="_blank" rel="noopener">Kubernetes Pod 的 Resource Request &amp; Limit 到底要怎麼設定？！</a></h3><p>常常會被問這個問題，但其實自己無法回答，當然不是因為很小氣不肯說XD 而是因為每個人所撰寫出來的應用程式所需要的 CPU 和 Memory 最低限度需要多少必須要經過壓測才有辦法得知，也才有信心知道自己的應用程式在目前的資源底下可以服務多少的使用者，這篇文章就 K8S Pod 設定 Limit &amp; Request 時可能會被怎樣對待給出清楚的說明</p>
+<ul>
+<li><p>首先將 Pod 分成三種類型</p>
+<ul>
+<li>Guaranteed: Pod 裡面的所有 Container 都有設定 Request &amp; Limit，而且值都一樣</li>
+<li>Burstable: 沒有任何一個 Container 在 Pod 裡面的 CPU 或是 Memory 設定為 Guaranteed</li>
+<li>Best Effort: Pod 沒有設定 Request 或是 Limit</li>
+</ul>
+</li>
+<li><p>K8S Cluster 就是根據設定的 Request &amp; Limit 來將 Pod 分配到適合的 Node 中，所以假如某一個 Pod 設定的 Request 大於目前 Node 可以承擔的資源時，那這個 Pod 就會找不到 Node 可以去，導致一直處於 Pending 的狀態；當 Request 設定的值太大時將無法被分配到任何的 Node，除此之外也可能會導致被霸佔但沒有使用到的資源無法被其他的 Pod 使用，這時候管理 K8S Cluster 的同事可能會站到你座位的後面看著你…</p>
+</li>
+<li><p>K8S Cluster 在分配 Pod 到適宜的 Node 上時，並不是那麼地直覺，是以底下這兩個值的較大值為主：</p>
+<ul>
+<li>Pod 裡面所有 Container Request 的總和</li>
+<li>Pod 裡面任一個 Init Container 的 Request</li>
+</ul>
+</li>
+<li><p>當 K8S Cluster 資源不敷使用時，Kubelet 便會變成劊子手，開始將一些 Pod 給砍掉，而砍掉的順序會是如何呢？</p>
+<ul>
+<li>首先砍掉已經死掉的 Pod，沒有在用的 Container Image 將 Disk 空間給釋放出來</li>
+<li>接下來就是把沒有設定 Request 或是 Limit 的 Best Effort Pod 給砍掉</li>
+<li>然後把使用到的資源比 Request 來得多的 Burstable Pod 給砍掉</li>
+<li>最後再把使用到的資源比 Request 來得少的 Burstable Pod 給砍掉</li>
+</ul>
+</li>
+<li><p>所以可以得知，假如某個 Pod 相當重要的話，那就一定要將其設定成 Guaranteed Pod，避免它在 Node 資源不充足的時候被砍掉；不過有一個例外，就是當 K8S 本身的系統服務需要更多運算資源才得以正常運行時，這種情況之下 Guaranteed Pod 才會被 Kubelet 給砍掉</p>
+</li>
+</ul>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://medium.com/@larry850806" target="_blank" rel="noopener">@Larry850806</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>想看什麼內容，告訴我們！ <a href="https://starbugs.typeform.com/to/mAk2Bk" target="_blank" rel="noopener">點我回饋意見</a></p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/02/11/15-mask-hackathon/"><img class="prev_cover lozad" data-src="/img/015cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 15 期 - 值得紀念的時刻，全台最大的口罩駭客松，Respect!</span></div></a></div><div class="next-post pull-right"><a href="/2020/01/28/13-congratulate-and-wish-you-wealth/"><img class="next_cover lozad" data-src="/img/013cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 13 期 - 恭喜呀恭喜～發呀發大財～</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

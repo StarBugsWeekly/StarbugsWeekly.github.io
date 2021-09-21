@@ -1,0 +1,111 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 90 期 - 每段程式，都藏著一個故事 | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 90 期 - 每段程式，都藏著一個故事"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2021/07/20/90-each-code-snippet-all-hide-a-story/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 90 期 - 每段程式，都藏著一個故事"><meta name="twitter:description" content="第 90 期 - 每段程式，都藏著一個故事"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/090cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 90 期 - 每段程式，都藏著一個故事"><meta property="og:url" content="https://weekly.starbugs.dev/2021/07/20/90-each-code-snippet-all-hide-a-story/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 90 期 - 每段程式，都藏著一個故事"><meta property="og:image" content="https://weekly.starbugs.dev/img/090cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 91 期 - 台灣奧運加油！" href="https://weekly.starbugs.dev/2021/07/27/91-olympics-taiwan-go/"><link rel="next" title="第 89 期 - 微解封後，也要繼續手手勤洗洗，病毒遠離你喔！" href="https://weekly.starbugs.dev/2021/07/13/89-keep-virus-away-from-you/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 90 期 - 每段程式，都藏著一個故事</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2021-07-20</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="用原生的-JavaScript-Intersection-Observer-API-實現-Lazy-Loading"><a href="#用原生的-JavaScript-Intersection-Observer-API-實現-Lazy-Loading" class="headerlink" title="用原生的 JavaScript Intersection Observer API 實現 Lazy Loading"></a><a href="https://medium.com/starbugs/%E7%94%A8%E5%8E%9F%E7%94%9F%E7%9A%84-javascript-intersection-observer-api-%E5%AF%A6%E7%8F%BE-lazy-loading-6bedccd0950" target="_blank" rel="noopener">用原生的 JavaScript Intersection Observer API 實現 Lazy Loading</a></h3><p>Lazy Loading 簡單說就是，雖然要顯示的資料量有 10 筆，但因為一個頁面大概只能呈現 2 到 3 筆，那我就先計算那 2 到 3 筆資料然後顯示就好，剩下的資料等使用者往下滾再繼續顯示，這樣等待時間就不會太久，那說到底，Lazy Loading 該如何實作呢？</p>
+<h2 id="前端開發"><a href="#前端開發" class="headerlink" title="前端開發"></a>前端開發</h2><h3 id="部落格搜尋引擎優化-SEO"><a href="#部落格搜尋引擎優化-SEO" class="headerlink" title="部落格搜尋引擎優化 (SEO)"></a><a href="https://linyencheng.github.io/2021/05/07/marketing-seo-blog/?utm_source=fb&utm_medium=post&utm_campaign=night" target="_blank" rel="noopener">部落格搜尋引擎優化 (SEO)</a></h3><p>每個網站都希望曝光率可以越高，並且在網頁中停留更久的時間，但偏偏搜尋引擎最佳化（Search Engine Optimization）就不是那麼好相處的傢伙 😂，文章裡面介紹了作者如何利用一些小眉角，將自己部落格的每月訪問次數提高了一千左右。</p>
+<h3 id="3-5-Years-as-a-Front-end-Engineer-Things-I-Learn-and-What-Next"><a href="#3-5-Years-as-a-Front-end-Engineer-Things-I-Learn-and-What-Next" class="headerlink" title="3.5 Years as a Front-end Engineer - Things I Learn and What Next?"></a><a href="https://adith.vercel.app/posts/three-and-a-half-years-as-frontend-engineer-what-i-learn" target="_blank" rel="noopener">3.5 Years as a Front-end Engineer - Things I Learn and What Next?</a></h3><p>在成為工程師後的一段時間，不時都會陷入「下一步到底該往哪裡走？」或是「接下來要學習什麼？」等問題的漩渦之中，然後久久爬不出來也尋找不到答案。這篇文章中的作者從「思考方式」、「技術深度與廣度的抉擇」和「如何提高價值」三個方向反思自己當下的狀況，以及他該準備什麼進入下個階段。</p>
+<h3 id="5-HTML-Tags-That-Almost-Nobody-Knows"><a href="#5-HTML-Tags-That-Almost-Nobody-Knows" class="headerlink" title="5 HTML Tags That Almost Nobody Knows"></a><a href="https://dev.to/ayabouchiha/5-html-tags-that-almost-nobody-knows-5p5" target="_blank" rel="noopener">5 HTML Tags That Almost Nobody Knows</a></h3><p>HTML 提供越來越多語義化的標籤，但通常都不太會去特別看到底有哪些標籤可以使用 😂，文章裡就介紹了 5 個鮮為人知的標籤，來看看它們提供了什麼樣特別的語意吧！</p>
+<h3 id="CSS-Trick-–-Customized-Dashed-or-Dotted-Border"><a href="#CSS-Trick-–-Customized-Dashed-or-Dotted-Border" class="headerlink" title="CSS Trick – Customized Dashed or Dotted Border"></a><a href="https://kovart.github.io/dashed-border-generator/" target="_blank" rel="noopener">CSS Trick – Customized Dashed or Dotted Border</a></h3><p>最近在做 border 的一些樣式上的研究，發現原生的 border 樣式其實很難達到很多當代的設計，但是怎麼會有前端工程師設計不出來的樣式呢？經過一番查詢之後發現要用 <code>background-image</code> 的方式繞過去，然後在經過一番查詢後查到一個網站竟然有人幫忙大家把各種樣式的 border 都設計好而且還會自動產生 css code 真的太酷了，趕緊來分享給大家XD</p>
+<h3 id="How-to-render-pseudo-before-content-dynamically-in-styled-component"><a href="#How-to-render-pseudo-before-content-dynamically-in-styled-component" class="headerlink" title="How to render pseudo before content dynamically in styled-component"></a><a href="https://stackoverflow.com/questions/46339034/how-to-render-pseudo-before-content-dynamically-in-styled-component" target="_blank" rel="noopener">How to render pseudo before content dynamically in styled-component</a></h3><p>這個算是最近踩到的一個小地雷，平常在用 styled-components 久了，當偽元素的 content 必須要動態產生時，很容易直覺以為在 callback 中 return string 就會正常顯示出來了，但其實這樣還不夠因為在 css content 中本身就必須要先加上 ‘’ 了，所以在 callback 的外面也要加上 ‘’ 才能順利的把內容顯示出來。</p>
+<h3 id="safari-IOS-menu-bar-conflicts-with-buttons-in-lower-10-of-the-screen"><a href="#safari-IOS-menu-bar-conflicts-with-buttons-in-lower-10-of-the-screen" class="headerlink" title="safari IOS menu bar conflicts with buttons in lower 10% of the screen"></a><a href="https://apple.stackexchange.com/questions/130822/safari-ios-menu-bar-conflicts-with-buttons-in-lower-10-of-the-screen" target="_blank" rel="noopener">safari IOS menu bar conflicts with buttons in lower 10% of the screen</a></h3><p>最近在解 ios safari 問題時(沒錯又是麻煩的 safari XD)，發現瀏覽器的 menu bar 會一直跟網頁中只要 button 在底部時會在滾動時產生樣式上的衝突，讓使用者無法在網頁上點擊到按鈕，沒想到網路上很多人都在問這個問題也有相對應的解答XD，如果有遇到這種問題的讀者都可以來看一下這邊的解答XD </p>
+<h2 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h2><h3 id="There-Are-Many-Ways-To-Safely-Count"><a href="#There-Are-Many-Ways-To-Safely-Count" class="headerlink" title="There Are Many Ways To Safely Count"></a><a href="https://brunocalza.me/there-are-many-ways-to-safely-count/" target="_blank" rel="noopener">There Are Many Ways To Safely Count</a></h3><p>在 Go 裡面要如何寫一個 thread-safe 的計數器呢？這邊提供了 mutex、channel、atomic 三種方法，我認為他們各有各的好處，如果對哪個比較不熟不妨點進來看看這個簡單的例子</p>
+<h3 id="Writing-slower-Go-programs"><a href="#Writing-slower-Go-programs" class="headerlink" title="Writing slower Go programs"></a><a href="https://bitfieldconsulting.com/golang/slower" target="_blank" rel="noopener">Writing slower Go programs</a></h3><p>雖然這篇文章叫 Writing slower Go programs，但可不是在教你怎麼寫出很慢的程式碼，而是在告訴你說 Go 這語言本身就很快，所以你在寫 Go 時應該更注重可讀性而不是效能，除非你真的發現某個地方是效能瓶頸，那再著手去改善它就好了</p>
+<h3 id="Dark-corners-of-go"><a href="#Dark-corners-of-go" class="headerlink" title="Dark corners of go"></a><a href="https://link.medium.com/HR2yKBUXJhb" target="_blank" rel="noopener">Dark corners of go</a></h3><p>Go 是一個易學難精的語言，尤其他的某些 feature 可能寫了很久都沒用過，而這篇文章就是把這些鮮為人知的 feature 整理出來，想更了解 Go 的話就快來看看吧～</p>
+<h2 id="DevOps"><a href="#DevOps" class="headerlink" title="DevOps"></a>DevOps</h2><h3 id="Kubernetes-API-and-Feature-Removals-In-1-22-Here’s-What-You-Need-To-Know"><a href="#Kubernetes-API-and-Feature-Removals-In-1-22-Here’s-What-You-Need-To-Know" class="headerlink" title="Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know"></a><a href="https://kubernetes.io/blog/2021/07/14/upcoming-changes-in-kubernetes-1-22/" target="_blank" rel="noopener">Kubernetes API and Feature Removals In 1.22: Here’s What You Need To Know</a></h3><p>時光匆匆，下個月 K8s 1.22 就要推出了！底下列的這些 API 將會在 1.22 中都被刪除掉@@ 不過不是完全消失啦，是因為已經離開 Beta 階段，要進入到正式版本，文章中詳細的說明移除後會被影響的資源有哪一些，並且詳細的說明要升級的話會有哪一些步驟需要做～</p>
+<ul>
+<li>ValidatingWebhookConfiguration 和 MutatingWebhookConfiguration API 的 Beta 版本 (admissionregistration.k8s.io/v1beta1)</li>
+<li>CustomResourceDefinition API 的 Beta 版本 (apiextensions.k8s.io/v1beta1)</li>
+<li>APIService API 的 Beta 版本 (apiregistration.k8s.io/v1beta1)</li>
+<li>TokenReview API 的 Beta 版本 (authentication.k8s.io/v1beta1)</li>
+<li>SubjectAccessReview, LocalSubjectAccessReview 和 SelfSubjectAccessReview API 的 Beta 版本 (authorization.k8s.io/v1beta1)</li>
+<li>CertificateSigningRequest API 的 Beta 版本 (certificates.k8s.io/v1beta1)</li>
+<li>Lease API 的 Beta 版本 (coordination.k8s.io/v1beta1)</li>
+<li>所有 Ingress API 的 Beta 版本 (extensions/v1beta1 和 networking.k8s.io/v1beta1)</li>
+</ul>
+<h3 id="7-GitHub-projects-to-make-you-a-better-Go-Developer💥"><a href="#7-GitHub-projects-to-make-you-a-better-Go-Developer💥" class="headerlink" title="7 GitHub projects to make you a better Go Developer💥"></a><a href="https://dev.to/ankit01oss/7-github-projects-to-make-you-a-better-go-developer-2nmh" target="_blank" rel="noopener">7 GitHub projects to make you a better Go Developer💥</a></h3><p>Go 一開始是由 Google 所開發出來的語言，後來他被用在很多的軟體專案內，根據 2020 stackoverflow 的開發者調查報告指出，Go 拿下開發者最想要學習程式語言中的第三名，所以作者列出了 7 個可以幫助大家學習 Go 的 GitHub 專案</p>
+<ol>
+<li><a href="https://github.com/avelino/awesome-go" target="_blank" rel="noopener">Awesome Go</a>: 收集了大量 Go 會使用到的 Framework, Library 和軟體的清單</li>
+<li><a href="https://github.com/golang-standards/project-layout" target="_blank" rel="noopener">Standard Go Project Layout</a>: 這個專案定義了一個 Go 應用專案的基本 Layout 應該要長什麼樣子</li>
+<li><a href="https://github.com/go-kit/kit" target="_blank" rel="noopener">Go kit</a>: 使用 Go 建立 MicroService 的工具，他可以幫忙解決分散式系統和應用架構的常見問題，讓開發者可以集中注意力在商業邏輯上</li>
+<li><a href="https://github.com/tmrts/go-patterns" target="_blank" rel="noopener">Go Design patterns</a>: 收集了 Go 的各種 Design 和 Application Pattern</li>
+<li><a href="https://github.com/quii/learn-go-with-tests" target="_blank" rel="noopener">Learn Go with test-driven development</a>: 學習如何使用 Go 達成 test-driven 的開發流程</li>
+<li><a href="https://github.com/hoanhan101/ultimate-go" target="_blank" rel="noopener">The Ultimate Go Study Guide</a>: 參加 Ultimate Go 課程學生的學習筆記</li>
+<li><a href="https://github.com/inancgumus/learngo" target="_blank" rel="noopener">1000+ Hand-crafted Go examples, exercises and quizzes</a>: 這個專案內有數以千計有關 Go 的範例，練習跟考題</li>
+</ol>
+<h3 id="Build-Your-Summer-Spotify-Playlist-with-Terraform"><a href="#Build-Your-Summer-Spotify-Playlist-with-Terraform" class="headerlink" title="Build Your Summer Spotify Playlist with Terraform"></a><a href="https://www.hashicorp.com/blog/build-your-summer-spotify-playlist-with-terraform" target="_blank" rel="noopener">Build Your Summer Spotify Playlist with Terraform</a></h3><p>目前使用 Terraform 來管理公有雲或是第三方服務內的組態是相當常見的事情，它擁有的眾多的Prodiver 讓維運人員可以站在巨人的肩膀上輕鬆地達成 Infrastructure as Code；繼之前有人寫了一個<a href="https://github.com/ndmckinley/terraform-provider-dominos" target="_blank" rel="noopener">訂達美樂披薩的 Provider</a> 之後，沒想到竟然還有人寫了 Spotify Provider 😂 有興趣的人透過文章內附的教學連結學習如何使用 Terraform 來建立專屬於自己的 Spotify 播放清單，裏面也有提到要如何透過分享自己的播放清單來贏得一件免費的 HashiCorp T-shirt！</p>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Writers:</p>
+<ul>
+<li><a href="https://medium.com/@hannahlin" target="_blank" rel="noopener">@HannahLin</a> - 從台灣到矽谷，熱愛前端的工程師女孩。</li>
+<li><a href="https://oldmo860617.medium.com/" target="_blank" rel="noopener">@Kyle老莫</a> - 無法忍受自己一天不進步的熱血社會菜雞。</li>
+<li><a href="https://medium.com/@airwaves" target="_blank" rel="noopener">@Airwaves</a> - Hi~我是 Airwaves，熱愛研究如何造輪子的前端工程師。</li>
+<li><a href="https://medium.com/@jinghua.shih" target="_blank" rel="noopener">@Jenny</a> - 我不寫 CSS。</li>
+</ul>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@w5151381guy" target="_blank" rel="noopener">@Andy</a> - 目標成為用嘴巴工作的工程師，專長為網頁開發以及 K8s。</li>
+</ul>
+<p>Maintainers:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://larry850806.medium.com" target="_blank" rel="noopener">@LarryLu</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術。</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>本週呈現主題方式做了一些改變，希望讓讀者能夠更快速精準的找到自己要的資訊。也加入社群活動這個區塊，每週更新社群活動的資訊。如果有任何建議，歡迎私訊 <a href="https://www.facebook.com/StarBugsWeekly/" target="_blank" rel="noopener">星巴哥技術週刊 FB 粉絲專頁</a> 與我們聯繫。</p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2021/07/27/91-olympics-taiwan-go/"><img class="prev_cover lozad" data-src="/img/091cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 91 期 - 台灣奧運加油！</span></div></a></div><div class="next-post pull-right"><a href="/2021/07/13/89-keep-virus-away-from-you/"><img class="next_cover lozad" data-src="/img/089cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 89 期 - 微解封後，也要繼續手手勤洗洗，病毒遠離你喔！</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>

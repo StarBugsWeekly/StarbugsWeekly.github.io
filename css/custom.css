@@ -1,0 +1,44 @@
+h2 {
+  background-color: #295ba7;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+h2:nth-of-type(1) {
+  background-color: #c31208;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+h2:nth-of-type()#星巴哥專欄作者，原創文章 {
+  background-color: #ad1d45;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+#StarBugs-Weekly {
+  background-color: #000;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+#Feedback {
+  background-color: #858585;
+  color: #fff;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+.next,
+.prev {
+  text-decoration: none;
+}

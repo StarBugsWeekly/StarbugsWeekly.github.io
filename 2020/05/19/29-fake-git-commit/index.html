@@ -1,0 +1,117 @@
+<!DOCTYPE html><html><head><link rel=manifest href=/manifest.json><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？ | StarBugs Weekly 星巴哥技術週刊</title><meta name="description" content="第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？"><meta name="keywords" content=""><meta name="author" content="StarBugs Weekly Editors"><meta name="copyright" content="StarBugs Weekly Editors"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="canonical" href="https://weekly.starbugs.dev/2020/05/19/29-fake-git-commit/"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？"><meta name="twitter:description" content="第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？"><meta name="twitter:image" content="https://weekly.starbugs.dev/img/029cover.jpg"><meta property="og:type" content="article"><meta property="og:title" content="第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？"><meta property="og:url" content="https://weekly.starbugs.dev/2020/05/19/29-fake-git-commit/"><meta property="og:site_name" content="StarBugs Weekly 星巴哥技術週刊"><meta property="og:description" content="第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？"><meta property="og:image" content="https://weekly.starbugs.dev/img/029cover.jpg"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="prev" title="第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊" href="https://weekly.starbugs.dev/2020/05/26/30-time-is-money/"><link rel="next" title="第 28 期 - 使用 cert-manager 管理 K8S TLS 憑證" href="https://weekly.starbugs.dev/2020/05/12/28-cert-manager/"><link rel="dns-prefetch" href="https://www.google-analytics.com"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-151536743-1', 'auto');
+ga('send', 'pageview');
+</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  highlight_copy: 'false',
+  highlight_lang: 'true',
+  highlight_shrink: 'false',
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    title: 'Bookmark',
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  copyright: undefined,
+  copy_copyright_js: false
+  
+}</script><link rel="alternate" href="/atom.xml" title="StarBugs Weekly 星巴哥技術週刊" type="application/atom+xml">
+</head><body><div id="header"> <div id="page-header"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">StarBugs Weekly 星巴哥技術週刊</a></span><i class="fa fa-bars fa-fw toggle-menu pull-right close" aria-hidden="true"></i><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></span><span class="pull-right" id="search_button"></span></div></div><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="lozad avatar_img" src="/img/logo.jpg" onerror="onerror=null;src='/img/friend_404.gif'"></div><div class="mobile_post_data"><div class="mobile_data_item is_center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">99</div></a></div></div><div class="mobile_data_item is_center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">2</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="https://medium.com/starbugs" target="_blank" rel="noopener"><i class="fa-fw fa fa-medium"></i><span> 技術專欄</span></a></div><div class="menus_item"><a class="site-page" href="https://www.facebook.com/starbugsweekly" target="_blank" rel="noopener"><i class="fa-fw fa fa-facebook"></i><span> 粉絲專頁</span></a></div><div class="menus_item"><a class="site-page" href="/atom.xml"><i class="fa-fw fa fa-rss"></i><span> RSS</span></a></div><script>document.body.addEventListener('touchstart', function(){ });</script></div></div></div><div id="body-wrap"><div id="content-outer"><div class="full_page" id="nav"><div class="nav_bg" style="background-image: url(/img/banner.jpeg)"></div><div id="site-info"><div id="site-title"><span class="blogtitle"><img class="bannerLogo" src="/img/logo.png"></span><!--= page.title || page.tag || page.category || config.title--></div><div id="site-sub-title" style="display: flex;justify-content: center;"><span class="subtitle" style="width: 75%; max-width: 900px;">StarBugs Weekly 由一群在星空般的 Bug 中求生存的開發者所創立的週刊。每週二我們會撰寫一篇原創文章與蒐集一系列國內外的好文與大家分享。內容包含 Web 前端、後端、DevOps、產品開發、專案管理 ... 等等，一切跟產品開發有關的知識。</span></div><div id="site-social-icons"><a class="social-icon" href="https://www.facebook.com/starbugsweekly" target="_blank"><i class="fa fa-facebook"></i></a><a class="social-icon" href="https://medium.com/starbugs" target="_blank"><i class="fa fa-medium"></i></a><a class="social-icon" href="/atom.xml" target="_blank"><i class="fa fa-rss"></i></a></div></div><div class="scroll-down"><i class="fa fa-angle-down scroll-down-effects"></i></div><div class="subscription"><span>SUBSCRIBE WITH MAIL</span><!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://gmail.us5.list-manage.com/subscribe/post?u=a55f7ec85b3c017297ef42d78&amp;id=56f46005ce" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" style="margin: 0px 24px" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a55f7ec85b3c017297ef42d78_56f46005ce" tabindex="-1" value=""></div>
+    <div class="clear">
+        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background: #E35751"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup--><span>No spam, ever. We'll never share your address and you can opt out at any time</span></div></div><div class="layout layout_post" id="content-inner"><article id="post"><h1>第 29 期 - 用 Git 這麼久了，你知道 commit 是可以偽造的嗎？</h1><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> Created on 2020-05-19</time><div class="article-container" id="post-content"><h2 id="本週專欄"><a href="#本週專欄" class="headerlink" title="本週專欄"></a>本週專欄</h2><h3 id="用-Git-這麼久了，你知道-commit-是可以偽造的嗎"><a href="#用-Git-這麼久了，你知道-commit-是可以偽造的嗎" class="headerlink" title="用 Git 這麼久了，你知道 commit 是可以偽造的嗎"></a><a href="https://medium.com/starbugs/how-to-fake-the-author-of-git-commit-f44453b70afc" target="_blank" rel="noopener">用 Git 這麼久了，你知道 commit 是可以偽造的嗎</a></h3><p>身為一個開發者，不管你寫的是什麼語言、用的是什麼框架，一定多少會用到 Git 版本控制系統，但你知道 git commit 的作者是可以偽造的嗎？本週的專欄從如何偽造別人的 commit 開始談起，也教你如何使用 GPG 數位簽章證明你就是本人，推薦有在使用 Git 跟 Github 的開發者都來看看～</p>
+<h2 id="神-Q-超人"><a href="#神-Q-超人" class="headerlink" title="神 Q 超人"></a>神 Q 超人</h2><h3 id="The-most-successful-developers-share-more-than-they-take"><a href="#The-most-successful-developers-share-more-than-they-take" class="headerlink" title="The most successful developers share more than they take"></a><a href="https://stackoverflow.blog/2020/05/14/the-most-successful-developers-share-more-than-they-take/" target="_blank" rel="noopener">The most successful developers share more than they take</a></h3><p>「It’s not enough to share your successful projects and knowledge, but additionally to bring the humility to share your learning and failures.」分享知識及成功的專案是遠遠不夠的，比那些更重要的是抱持謙虛及珍惜失敗的經歷。這篇文章雖然很短，但是句句的是金言，可以在通勤或是吃早餐的時候順便看一下。😂</p>
+<h3 id="How-to-Stay-Motivated-to-Keep-Learning-to-Code"><a href="#How-to-Stay-Motivated-to-Keep-Learning-to-Code" class="headerlink" title="How to Stay Motivated to Keep Learning to Code"></a><a href="https://www.freecodecamp.org/news/how-to-stay-motivated-to-keep-learning-to-code/" target="_blank" rel="noopener">How to Stay Motivated to Keep Learning to Code</a></h3><p>大家都是如何刺激自己繼續學習的，畢竟程式根本就沒學完的一天，很喜歡作者提到的第一點「5 minutes of Learning」，五分鐘看起來什麼事情都做不了，但真正重要的是讓你開始學習，你不需要想說每天都要花幾個小時讀書或學習，也許你只需要五分鐘，然後回神時就過了五十分鐘 😃</p>
+<h3 id="How-to-SEO-your-website-in-10-minutes"><a href="#How-to-SEO-your-website-in-10-minutes" class="headerlink" title="How to SEO your website in 10 minutes"></a><a href="https://dev.to/christiankastner/how-to-seo-your-website-in-10-minutes-6mk" target="_blank" rel="noopener">How to SEO your website in 10 minutes</a></h3><p>來學習一些簡單的 SEO 吧！大家有想過會被 Google 或其他瀏覽器的瀏覽顯示出來的資料需要放在網站中的哪裡嗎？如果想要更容易的被尋找到該如何放在 HTML 裡的哪個標籤呢？來看看最入門的簡單解說！</p>
+<h2 id="Larry-Lu"><a href="#Larry-Lu" class="headerlink" title="Larry Lu"></a>Larry Lu</h2><h3 id="為你自己學-Git-高見龍"><a href="#為你自己學-Git-高見龍" class="headerlink" title="為你自己學 Git | 高見龍"></a><a href="https://gitbook.tw/#git--1" target="_blank" rel="noopener">為你自己學 Git | 高見龍</a></h3><p>這週是 Git 相關的主題，那就順便來推一下龍哥寫的〈為你自己學 Git〉。這本書真的是我看過最好的 Git 教材，不僅把每個指令的原理都講到了，甚至還有對 Git 內部物件的解析。雖然有少部分的內容需要付費才能解鎖（其實也不貴，我就有買），但絕大部分的內容都是免費、公開的，如果你有打算認真學 Git 的話真的超推這本書</p>
+<h3 id="CS-Visualized-Useful-Git-Commands"><a href="#CS-Visualized-Useful-Git-Commands" class="headerlink" title="CS Visualized: Useful Git Commands"></a><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1" target="_blank" rel="noopener">CS Visualized: Useful Git Commands</a></h3><p>常常搞混 Git 指令的工程師們有福了～這篇文章把 Git 的很多指令如 merge、reset、rebase 做成很療癒的動畫，讓你看了一目瞭然，以後就不會再搞混了</p>
+<h3 id="The-anatomy-of-a-Git-commit"><a href="#The-anatomy-of-a-Git-commit" class="headerlink" title="The anatomy of a Git commit"></a><a href="https://blog.thoughtram.io/git/2014/11/18/the-anatomy-of-a-git-commit.html" target="_blank" rel="noopener">The anatomy of a Git commit</a></h3><p>一個 Git commit 內部到底長什麼樣子？每個 Git commit 的 ID 又是根據哪些屬性產生出來？雖然不知道好像也沒關係，但當作冷知識增廣見聞一下也是不錯～</p>
+<h2 id="LukaTW"><a href="#LukaTW" class="headerlink" title="LukaTW"></a>LukaTW</h2><h3 id="Learn-Deno-Chat-app"><a href="#Learn-Deno-Chat-app" class="headerlink" title="Learn Deno: Chat app"></a><a href="https://dev.to/aralroca/learn-deno-chat-app-37f0" target="_blank" rel="noopener">Learn Deno: Chat app</a></h3><p>呼應一下樓上 Q 超人的 Deno 1.0 釋出，短短幾天內已經獲得大量的關注。我來推薦一篇熱騰騰的 5/13 剛剛寫出的文章「用 Deno 寫聊天 APP」。這篇文章從 hello world 到 debug，並使用 websocket 來開發聊天軟體，很充實，獲得很多迴響。私心認為 deno 的賣點是 logo 太可愛了啦。</p>
+<h3 id="PushBullet：Let’s-Guess-What-Google-Requires-In-14-Days-Or-They-Kill-Our-Extension"><a href="#PushBullet：Let’s-Guess-What-Google-Requires-In-14-Days-Or-They-Kill-Our-Extension" class="headerlink" title="PushBullet：Let’s Guess What Google Requires In 14 Days Or They Kill Our Extension"></a><a href="https://blog.pushbullet.com/2020/05/13/lets-guess-what-google-requires-in-14-days-or-they-kill-our-extension/" target="_blank" rel="noopener">PushBullet：Let’s Guess What Google Requires In 14 Days Or They Kill Our Extension</a></h3><p>PushBullet 是一款可以將 Chrome 的訊息推送到手機上的 Chrome Extension. Google 最近要求 Pushbullet 改善權限問題否則要在 14 天後下架 PushBullet 的 chrome extension. 為此 PushBullet 感到非常的不爽。而這篇文章就是 PushBullet 說明了用了哪些權限來做什麼事情。雖然 PushBullet 很不爽，我個人覺得 Google 做的好，你一個推送訊息的 app 要求使用的 copy paste 的權限幹嘛？</p>
+<h3 id="TSMC-Announces-Intention-to-Build-and-Operate-an-Advanced-Semiconductor-Fab-in-the-United-States"><a href="#TSMC-Announces-Intention-to-Build-and-Operate-an-Advanced-Semiconductor-Fab-in-the-United-States" class="headerlink" title="TSMC Announces Intention to Build and Operate an Advanced Semiconductor Fab in the United States"></a><a href="https://www.tsmc.com/tsmcdotcom/PRListingNewsAction.do?action=detail&language=E&newsid=THGOANPGTH" target="_blank" rel="noopener">TSMC Announces Intention to Build and Operate an Advanced Semiconductor Fab in the United States</a></h3><p>台積電有意在美國設先進的半導體廠，沒寫清楚是什麼原因，這是台積電準備在美國設的第二個廠，這個新聞是在 5/15 發佈的，美國目前的疫情可以工作嘛？抱持好奇態度。</p>
+<h2 id="smalltown"><a href="#smalltown" class="headerlink" title="smalltown"></a>smalltown</h2><h3 id="Top-10-must-know-Kubernetes-design-patterns"><a href="#Top-10-must-know-Kubernetes-design-patterns" class="headerlink" title="Top 10 must-know Kubernetes design patterns"></a><a href="https://developers.redhat.com/blog/2020/05/11/top-10-must-know-kubernetes-design-patterns/" target="_blank" rel="noopener">Top 10 must-know Kubernetes design patterns</a></h3><p>十個 K8S 初學者一定要知道的 Design Pattern！除了可以透過瞭解這些 Pattern 來更熟悉 K8S 底層的概念之外，當你在設計 K8S 相關的應用程式時也可以幫上忙</p>
+<ul>
+<li>Foundational patterns<ul>
+<li>Health Probe pattern: 每一個 Container 都必須要實作特定的 API 讓 K8S 透過此來觀察和管理應用程式，盡可能讓其保持最健康的狀態</li>
+<li>Predictable Demands pattern: 每一個 Container 都必須要定義好會使用到多少的資源，這樣 K8S 底層才能夠在一個共享的環境中來成功的部署和管理應用程式</li>
+<li>Automated Placement patterns: 了解 K8S 如何將 Workload 分散在多個節點的叢集中</li>
+</ul>
+</li>
+<li>Structural patterns<ul>
+<li>Init Container pattern: Init Container 獨立於主要應用程式運行的 Container，讓他可以先幫主要應用程式進行初始化環境所需要的任務</li>
+<li>Sidecar patterns: 如何拓展和加強既有的應用程式 Container，但是卻不需要改變它</li>
+</ul>
+</li>
+<li>Behavioral patterns<ul>
+<li>Batch Job patterns: 在分散系的系統中如何運行獨立且單一的工作</li>
+<li>Stateful Service patterns: 如何在 K8S 中運行 Stateful 應用程式，例如使用到的永久性磁碟空間，特殊的網路設定…等</li>
+<li>Service Discovery pattern: Client 如何去存取和發現運行在 K8S 裡面的服務端點</li>
+</ul>
+</li>
+<li>Higher-level patterns<ul>
+<li>Controller pattern: 如何監控和維護一系列的 K8S 資源維持在希望的狀態中</li>
+<li>Operator pattern: 如何使用 CustomResourceDefinitions 來將日常操作和維護應用服務的動作封裝起來</li>
+</ul>
+</li>
+</ul>
+<h3 id="Top-10-Courses-to-Learn-Linux-Command-Line-in-2020-—-Best-and-FREE"><a href="#Top-10-Courses-to-Learn-Linux-Command-Line-in-2020-—-Best-and-FREE" class="headerlink" title="Top 10 Courses to Learn Linux Command Line in 2020 — Best and FREE"></a><a href="https://medium.com/javarevisited/top-10-courses-to-learn-linux-command-line-in-2020-best-and-free-f3ee4a78d0c0" target="_blank" rel="noopener">Top 10 Courses to Learn Linux Command Line in 2020 — Best and FREE</a></h3><p>即使已經有數以百計對於人類來說相對友善的 GUI 可以用來管理系統，但是為什麼 Command Line 仍然還是一直在被使用呢？我想每個工程師應該都會同意其實 Command Line 比 GUI 介面強太多了；而目前 Linux 也是運行應用服務最主流的作業系統，因此身為一位程式設計師，IT 專業人員，或是研發工程師，其實都逃不了去學習跟了解 Liunx，當然還有用來管理他的 Command Line，因此這篇文章推薦了 10 堂最棒的 Linux 線上訓練課程</p>
+<ol>
+<li><a href="https://www.udemy.com/course/introduction-to-linux-centos-7/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-sw4jr3M94ge0NCAZfEn9MQ" target="_blank" rel="noopener">Introduction To Linux</a></li>
+<li><a href="https://www.udemy.com/course/linux-command-line-volume1/?ranMID=39197&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-a4Y05gxWjTXwLpspifvP9g&LSNPUBID=JVFxdTr9V80" target="_blank" rel="noopener">Linux Command Line Basics</a></li>
+<li><a href="https://www.udemy.com/course/vim-commands-cheat-sheet/?ranMID=39197&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-BoEjAQC8JlwiWklRZ5EvQg&LSNPUBID=JVFxdTr9V80" target="_blank" rel="noopener">Vim Masterclass</a></li>
+<li><a href="https://www.educative.io/courses/bash-for-programmers?authorName=Educative?affiliate_id=5073518643380224" target="_blank" rel="noopener">Bash for Programmers</a></li>
+<li><a href="https://www.udemy.com/course/command-line/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-LlQcd2gIrhD0xD6L0YD3OQ" target="_blank" rel="noopener">Learn The Linux Command Line: Basic Commands</a></li>
+<li><a href="https://www.udemy.com/course/red-hat-enterprise-linux-technical-overview/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-Pa9nwMQS9HhzX.tfP4wSQw" target="_blank" rel="noopener">Red Hat Enterprise Linux Technical Overview</a></li>
+<li><a href="https://www.udemy.com/course/linux-tutorials/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-9k2paW4CKhrDxaDJPwX0JQ" target="_blank" rel="noopener">Linux Tutorials and Projects (Free)</a></li>
+<li><a href="https://www.udemy.com/course/learn-linux-on-a-mac/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-BxtBII8ebR3KkgxUwCqUVQ" target="_blank" rel="noopener">Learn Linux on a MAC or Windows</a></li>
+<li><a href="https://www.udemy.com/course/linux-academy-linux-operating-system-fundamentals/?LSNPUBID=JVFxdTr9V80&ranEAID=JVFxdTr9V80&ranMID=39197&ranSiteID=JVFxdTr9V80-25M8qANGGKP4HCuyTBqECw" target="_blank" rel="noopener">Linux Operating System Fundamentals</a></li>
+<li><a href="https://www.udemy.com/course/linux-administration-bootcamp/?ranMID=39197&ranEAID=JVFxdTr9V80&ranSiteID=JVFxdTr9V80-KLsjHew85D5uY5hcbnMa1Q&LSNPUBID=JVFxdTr9V80" target="_blank" rel="noopener">Linux Administration Bootcamp: Go from Beginner to Advanced</a></li>
+</ol>
+<h3 id="xxh"><a href="#xxh" class="headerlink" title="xxh"></a><a href="https://github.com/xxh/xxh" target="_blank" rel="noopener">xxh</a></h3><p>在這邊要推薦一個叫做 xxh 的好用工具，身為一位 DevOps/SRE 一定避免不了登入到非工作環境的機器中去查找問題，自己日常在本地端 Terminal 一定會設定很多好用的 Alias, 工具或是顯示顏色，但是一旦 ssh 連線到其他的機器中時，這些設定都不復存在，你就像是一個手無寸鐵的嬰兒一般 XD 而 xxh 的功能就是可以把你最喜愛的 shell 給帶到遠端的機器去，而且不需要 root 權限跟在系統安裝東西！</p>
+<h2 id="StarBugs-Weekly"><a href="#StarBugs-Weekly" class="headerlink" title="StarBugs Weekly"></a>StarBugs Weekly</h2><p>StarBugs Weekly 由一群不寫文章就會想要亂花錢，但是又沒有那麼多錢，只好繼續寫文章的開發者所創立。<br>內容包含 Web 前端、中端、後端、DevOps、產品開發、精實創業，一切跟產品有關的知識，都是我們的守備範圍！</p>
+<p>Curators:</p>
+<ul>
+<li><a href="https://medium.com/@gqsm" target="_blank" rel="noopener">@GQSM</a> - Hi！我是神 Q 超人，一個先衝再說的男人。</li>
+<li><a href="https://medium.com/@larry850806" target="_blank" rel="noopener">@Larry850806</a> - 我是 Larry，傳說中的 0.1 倍工程師！</li>
+<li><a href="https://medium.com/@LukaTW" target="_blank" rel="noopener">@LukaTW</a> - 一名全身都是死角的工程師。</li>
+<li><a href="https://medium.com/@smalltown" target="_blank" rel="noopener">@smalltown</a> - 熱愛鑽研各種可以提升雲端服務品質及增進團隊開發效率的開源技術</li>
+</ul>
+<h2 id="Feedback"><a href="#Feedback" class="headerlink" title="Feedback"></a>Feedback</h2><p>想看什麼內容，告訴我們！ <a href="https://starbugs.typeform.com/to/mAk2Bk" target="_blank" rel="noopener">點我回饋意見</a></p>
+</div></article><nav class="pagination_post" id="pagination"><div class="prev-post pull-left"><a href="/2020/05/26/30-time-is-money/"><img class="prev_cover lozad" data-src="/img/030cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Previous Post</div><div class="prev_info"><span>第 30 期 - 一寸光陰一寸金，冗長的技術文章先放一邊</span></div></a></div><div class="next-post pull-right"><a href="/2020/05/12/28-cert-manager/"><img class="next_cover lozad" data-src="/img/028cover.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="label">Next Post</div><div class="next_info"><span>第 28 期 - 使用 cert-manager 管理 K8S TLS 憑證</span></div></a></div></nav></div></div><footer style="background-image: url(/img/banner.jpeg)"><div id="footer"><div class="copyright">&copy;2019 - 2021 By StarBugs Weekly Editors</div></div></footer></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/nightshift.js"></script><script color="0,0,255" opacity="0.7" zIndex="-1" count="39" src="https://cdn.jsdelivr.net/gh/jerryc127/CDN/js/canvas-nest.js"></script><script src="/js/tw_cn.js"></script><script>translateInitilization()
+</script><script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script><script>const observer = lozad(); // lazy loads elements with default selector as '.lozad'
+observer.observe();
+</script><script>if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js?t=1632239092542')
+    .then(function () {console.log('ServiceWorker Register Successfully.')})
+    .catch(function (e) {console.error(e)});
+}
+</script></body></html>
